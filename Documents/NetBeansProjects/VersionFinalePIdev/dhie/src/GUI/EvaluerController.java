@@ -266,7 +266,7 @@ public class EvaluerController implements Initializable {
         
         Evaluation e = new Evaluation(note,email, prenolEval, nomEval, nomEven);
         Services.EvaluationService ess = new EvaluationService() ; 
-        ess.ajouter_Evaluation(e);
+        ess.ajouterEvaluation(e);
         System.out.println("evaluation ajouté");
          Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Merci ");

@@ -5,7 +5,7 @@
  */
 package IServices;
 
-import Entités.User;
+import Entités.Utilisateur;
 import java.util.List;
 
 /**
@@ -13,11 +13,11 @@ import java.util.List;
  * @author boussandel
  */
 public interface IUserService {
-public void add(User user);
-public User findById(Integer idUser);
-public List<User> getAll();
+public void add(Utilisateur user);
+public Utilisateur findById(Integer idUser);
+public List<Utilisateur> getAll();
 public void delete(Integer idUser);
-public User authentication(String login, String password) ; 
+public Utilisateur authentication(String login, String password); 
 public boolean RechLogin(String text) ;
     
     

@@ -40,6 +40,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -59,6 +60,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.apache.commons.io.FileUtils;
 import org.controlsfx.control.textfield.TextFields;
 
 /**
@@ -176,7 +178,7 @@ public class GestionEveController implements Initializable {
        
        
        etat.add("disponible");
-       etat.add("reservé");
+       etat.add("réservé");
        
 
 
@@ -446,16 +448,22 @@ public class GestionEveController implements Initializable {
     }
 
     @FXML
-    private void filaAction(ActionEvent event) throws FileNotFoundException {
+    private void filaAction(ActionEvent event) throws FileNotFoundException, IOException {
          
-        fc.setInitialDirectory(new File("C:\\Users\\boussandel\\branche2\\Desktop\\images"));
-       selectedFile = fc.showOpenDialog(null);
+       File dest=new File("C:\\wamp\\www\\Images");
         
-        if (selectedFile!= null ) {
-            FileInputStream input = new FileInputStream(selectedFile);
-            Image image = new Image(input);
-            image1.setText(selectedFile.getName());
-            imageView1.setImage(image);
+        fc.setInitialDirectory(new File("C:\\Users\\boussandel\\branche2\\Desktop\\images"));
+        selectedFile = fc.showOpenDialog(null);
+        if(selectedFile!=null){
+        FileUtils.copyFileToDirectory(selectedFile, dest);
+        
+        File newFile = new File("C:\\wamp\\www\\Images\\"+selectedFile.getName());
+        
+        FileInputStream input = new FileInputStream(newFile);
+        Image image = new Image(input);
+        image1.setText(newFile.getAbsolutePath()); 
+        imageView1.setImage(image); 
+        lbl12.setText("image ajouté ");
             fileChooser.setStyle("-fx-text-fill:green;");
 
             
@@ -511,7 +519,10 @@ public class GestionEveController implements Initializable {
 
     @FXML
     private void contacterAction(ActionEvent event) throws IOException {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource(("Contacter.fxml")));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(("Authentification.fxml")));
+         
+                ((Node)(event.getSource())).getScene().getWindow().hide();
+
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 Stage stage = new Stage () ;

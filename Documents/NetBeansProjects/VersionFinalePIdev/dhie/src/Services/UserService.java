@@ -6,7 +6,7 @@
 package Services;
 
 import DataBase.DB;
-import Entités.User;
+import Entités.Utilisateur;
 import IServices.IUserService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,7 +30,7 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void add(User user) {
+    public void add(Utilisateur user) {
         String req = "insert into user(nom,prenom,email,password,telephone,nationalite,role,login,photo)values(?,?,?,?,?,?,?,?,?)";
         
          try {
@@ -56,16 +56,16 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User findById(Integer idUser) {
+    public Utilisateur findById(Integer idUser) {
         
          String req = "select * from user where idUser = ?";
-        User user = null;
+        Utilisateur user = null;
         try {
             ps = connection.prepareStatement(req);
             ps.setInt(1, idUser);
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()) {
-                user = new User(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3));
+                user = new Utilisateur(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),resultSet.getString(4));
                 System.out.println("Services.UserService.findById()");
             }
         } catch (Exception e) {
@@ -75,14 +75,14 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public List<User> getAll() {
+    public List<Utilisateur> getAll() {
         String req = "select * from user";
-        List<User> users = new ArrayList<>();
+        List<Utilisateur> users = new ArrayList<>();
         try {
             ps = connection.prepareStatement(req);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
-                User user = new User(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3));
+                Utilisateur user = new Utilisateur(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3));
                 users.add(user);
             }
         } catch (Exception e) {
@@ -106,8 +106,8 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User authentication(String login, String password) {
-         User u=new User();
+    public Utilisateur authentication(String login, String password) {
+         Utilisateur u=new Utilisateur();
           String i="fail";
           String k;
         try {

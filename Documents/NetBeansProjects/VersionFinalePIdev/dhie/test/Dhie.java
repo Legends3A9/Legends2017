@@ -8,7 +8,7 @@
 import Entités.Evaluation;
 import Entités.Evenement;
 import Entités.Participation;
-import Entités.User;
+import Entités.Utilisateur;
 import Services.EvaluationService;
 import Services.EvenementServices;
 import Services.ParticipationService;
@@ -49,8 +49,8 @@ Evenement e = new Evenement("louay","dldl","dldld", date, "ddss","dlsds","smdds"
         //evs.ajouter_Evaluation(ee);
        
 /*
-     User u ; 
-        u = new  User("nomm","prenom","email","password","telephone","nationalite","role","login","photo");
+     Utilisateur u ; 
+        u = new  Utilisateur("nomm","prenom","email","password","telephone","nationalite","role","login","photo");
            Services.UserService us = new UserService(); 
            us.add(u);
             us.delete(1);
@@ -58,23 +58,25 @@ Evenement e = new Evenement("louay","dldl","dldld", date, "ddss","dlsds","smdds"
             us.getAll();
             us.authentication("dhia", "dhia") ; */
             
-       /* Evenement e = new Evenement(5,"journee","dhdhdh",date , "jhhhhh","hdhdhdh","dhdhdhd","djdjhdhdh","dhdhdhdh",52,10,16) ; 
+    /* Evenement e = new Evenement(5,"journee","dhdhdh",date , "jhhhhh","hdhdhdh","dhdhdhd","djdjhdhdh","dhdhdhdh",52,10,16) ; 
         Evenement e2 = new Evenement(15,"journee","dhdhdh",date , "jhhhhh","hdhdhdh","dhdhdhd","djdjhdhdh","dhdhdhdh",52,10,16) ;
        Services.EvenementServices es = new EvenementServices(); 
        es.ajouterEvenement(e2);*/
-       /*Evaluation r = new Evaluation("dhia", "eddine", "boussandel", "dkkd", "dhia");
+   Evaluation r = new Evaluation(34, 59, 0, "nomParticipant", "prenomParticipant", "emailParticipant", "nomEvenement");
        Services.EvaluationService see = new EvaluationService();
-       see.ajouter_Evaluation(r);
+       see.ajouterEvaluation(r);
+       see.evalueDéja(34);
        
-       Services.EvaluationService ess2 = new EvaluationService(); 
-       ess2.findAll();*/
-        /*Participation p = new Participation(10, 10);
+     //  Services.EvaluationService ess2 = new EvaluationService(); 
+       //ess2.moyByName("dhia");       
+       /* Participation p = new Participation(10, 10);
         ParticipationService ps = new ParticipationService();
         ps.ajouterParticipation(p);*/
+      //  ps.participeDéja(2);
         
-        Services.EvenementServices es = new EvenementServices(); 
+        //Services.EvenementServices es = new EvenementServices(); 
         //es.decrementation_nbrPlaces(70,23);
-        es.decrEtChangementDetat(70);
+        //es.decrEtChangementDetat(70);
         
         
       

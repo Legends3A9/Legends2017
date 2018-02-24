@@ -7,6 +7,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.ImageView?>
@@ -16,9 +17,9 @@
 
 <AnchorPane id="AnchorPane" prefHeight="891.0" prefWidth="1261.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.GestionEveController">
    <children>
-      <Text layoutX="508.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Des Evenements " textAlignment="CENTER">
+      <Text layoutX="43.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Des Evenements " textAlignment="CENTER">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font name="Berlin Sans FB Bold" size="30.0" />
          </font>
       </Text>
       <AnchorPane layoutX="5.0" layoutY="76.0" prefHeight="400.0" prefWidth="1255.0">
@@ -44,6 +45,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Text>
+            <Separator layoutX="69.0" layoutY="16.0" prefHeight="0.0" prefWidth="1114.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="anchor" layoutX="25.0" layoutY="502.0" onDragDetected="#fileChouserAction" prefHeight="303.0" prefWidth="1212.0">
@@ -122,13 +124,14 @@
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font></Button>
-      <Button fx:id="contacter" layoutX="964.0" layoutY="9.0" mnemonicParsing="false" onAction="#contacterAction" prefHeight="31.0" prefWidth="137.0" style="-fx-background-color: #0000FF;" text="Contact us " textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="15.0" />
-         </font></Button>
       <Button fx:id="evaluation" layoutX="1018.0" layoutY="827.0" mnemonicParsing="false" onAction="#passerEvaluationAction" prefHeight="31.0" prefWidth="114.0" style="-fx-background-color: #0000FF;" text="Evaluations" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font></Button>
+      <Button fx:id="contacter" layoutX="1090.0" layoutY="22.0" mnemonicParsing="false" onAction="#contacterAction" prefHeight="31.0" prefWidth="137.0" style="-fx-background-color: #FF0000;" text="Se Deconnécter " textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -5,7 +5,7 @@
  */
 package GUI;
 
-import Entités.User;
+import Entités.Utilisateur;
 import Services.UserService;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
@@ -16,6 +16,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -48,12 +49,14 @@ public class AuthentificationController implements Initializable {
     @FXML
     private void connexion(ActionEvent event) throws IOException {
         Services.UserService us = new UserService(); 
-       User user =us.authentication(jlogin.getText(), jpass.getText()); 
+       Utilisateur user =us.authentication(jlogin.getText(), jpass.getText()); 
         if(user.getIdUser()<1) {
            
      }else {
              Stage stage = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("EvenMembre.fxml"));
+             ((Node)(event.getSource())).getScene().getWindow().hide();
+
+                Parent root = FXMLLoader.load(getClass().getResource("membreFront.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
@@ -75,8 +78,13 @@ public class AuthentificationController implements Initializable {
             System.out.println("erreeeur");
         } */
         } 
-         User.setEtat_compte(1);
-        User.setIdd(user.getIdUser());
+        Utilisateur.setEtat_compte(1);
+        Utilisateur.setIdd(user.getIdUser());
+        Utilisateur.setNomParticipant(user.getNom());
+        Utilisateur.setPrenomParticipant(user.getPrenom());
+        Utilisateur.setEmailEv(user.getEmail());
+        Utilisateur.setRoleUser(user.getRole());
+        System.out.println(user.getIdd());
     }
 
     @FXML

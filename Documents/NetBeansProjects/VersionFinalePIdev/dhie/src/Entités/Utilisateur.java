@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author boussandel
  */
-public class User {
+public class Utilisateur {
     
    private int idUser ; 
    private String nom ; 
@@ -25,15 +25,53 @@ public class User {
    private String login ;
    private String Photo;
    
-    private static User instance;
+    private static Utilisateur instance;
     public static int idd;
+    public static String nomParticipant ; 
+    public  static String prenomParticipant ; 
+    public static String emailEv ; 
+    public static String roleUser ; 
+
+    public static String getRoleUser() {
+        return roleUser;
+    }
+
+    public static void setRoleUser(String roleUser) {
+        Utilisateur.roleUser = roleUser;
+    }
+    
+
+    public static String getEmailEv() {
+        return emailEv;
+    }
+
+    public static void setEmailEv(String emailEv) {
+        Utilisateur.emailEv = emailEv;
+    }
+
+    public static String getNomParticipant() {
+        return nomParticipant;
+    }
+
+    public static void setNomParticipant(String nomParticipant) {
+        Utilisateur.nomParticipant = nomParticipant;
+    }
+
+    public static String getPrenomParticipant() {
+        return prenomParticipant;
+    }
+
+    public static void setPrenomParticipant(String prenomParticipant) {
+        Utilisateur.prenomParticipant = prenomParticipant;
+    }
+    
 
     public static int getIdd() {
         return idd;
     }
 
     public static void setIdd(int idd) {
-        User.idd = idd;
+        Utilisateur.idd = idd;
     }
     public static int etat_compte;
 
@@ -42,15 +80,15 @@ public class User {
     }
 
     public static void setEtat_compte(int etat_compte) {
-        User.etat_compte = etat_compte;
+        Utilisateur.etat_compte = etat_compte;
     }
     
    
-   public User () {
+   public Utilisateur () {
        
    }
 
-    public User(String nom, String prenom, String email, String password, String telephone, String nationalite, String role, String login, String Photo) {
+    public Utilisateur(String nom, String prenom, String email, String password, String telephone, String nationalite, String role, String login, String Photo) {
        
         this.nom = nom;
         this.prenom = prenom;
@@ -63,7 +101,7 @@ public class User {
         this.Photo = Photo;
     }
 
-    public User(String nom, String prenom, String email, String password, String telephone, String nationalite, String role, String login) {
+    public Utilisateur(String nom, String prenom, String email, String password, String telephone, String nationalite, String role, String login) {
         this.nom=nom ; 
         this.prenom=prenom ; 
         this.email = email ; 
@@ -74,13 +112,13 @@ public class User {
         this.login=login ;
     }
 
-    public User(int aInt, String string, String string0) {
+    public Utilisateur(int aInt, String string, String string0) {
         this.idUser=aInt; 
         this.nom=string ; 
         this.prenom=string0;
     }
 
-    public User(User user) {
+    public Utilisateur(Utilisateur user) {
         this.idUser = idUser;
         this.nom = nom;
         this.prenom = prenom;
@@ -91,6 +129,15 @@ public class User {
         this.role = role;
         this.login = login;
     }
+
+    public Utilisateur(int idUser, String nom, String prenom, String email) {
+        this.idUser = idUser;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+    }
+
+   
 
    
     
@@ -167,17 +214,17 @@ public class User {
         this.login = login;
     }
     
-    public static User getInstance(){
+    public static Utilisateur getInstance(){
         if (instance == null)
-            instance = new User();
+            instance = new Utilisateur();
         
         
     return instance;
     }
     
      
-    public static void setInstance(User user){
-    instance = new User(user);
+    public static void setInstance(Utilisateur user){
+    instance = new Utilisateur(user);
     }
 
     public String getPhoto() {
@@ -205,7 +252,7 @@ public class User {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final User other = (User) obj;
+        final Utilisateur other = (Utilisateur) obj;
         if (this.idUser != other.idUser) {
             return false;
         }

@@ -6,12 +6,16 @@
 package Services;
 
 import DataBase.DB;
+import Entités.Evenement;
 import Entités.Participation;
 import IServices.IParticipation;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -48,5 +52,44 @@ public class ParticipationService implements IParticipation{
     }    catch (SQLException ex) {
              Logger.getLogger(ParticipationService.class.getName()).log(Level.SEVERE, null, ex);
          }
-    
-}}
+}
+
+    @Override
+    public List<Participation> participeDéja(int id) {
+        List<Participation> listeParticipation = new ArrayList<>();
+
+        String requete = "select * from participation WHERE idUser = "+id; 
+                
+        try {
+            Statement statement = connection.createStatement();
+            r = statement.executeQuery(requete);
+
+            while (r.next()) {
+                Participation f = new Participation();
+                
+               
+               f.setIdParticipation(r.getInt(1));
+               f.setIdUser(r.getInt(2));
+               f.setIdEvenement(r.getInt(3));
+                listeParticipation.add(f);
+                
+                System.out.println("recupération de id evenement "+listeParticipation.toString());
+            }
+            return listeParticipation;
+            
+            
+            
+        } catch (SQLException ex) {
+            System.out.println("SQL Error: " + ex);
+            return null;
+        }
+        
+        
+    }
+
+   
+
+
+
+
+}

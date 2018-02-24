@@ -6,6 +6,7 @@
 package GUI;
 
 import Entités.Evenement;
+import Entités.Utilisateur;
 import Services.EvenementServices;
 
 import com.jfoenix.controls.JFXButton;
@@ -33,6 +34,7 @@ import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -49,6 +51,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.commons.io.FileUtils;
 
 /**
  * FXML Controller class
@@ -170,6 +173,16 @@ ev.setPrix(prixEvenement);
             alert.setTitle("Merci ");
             alert.setContentText("Evaluation ajouté avec succées  ");
             alert.showAndWait();
+            
+            
+            
+                 Stage stage = new Stage();
+                 Parent root = FXMLLoader.load(getClass().getResource("GestionEve.fxml"));
+                  Scene scene = new Scene(root);
+                  stage.setScene(scene);
+                  stage.show();
+            
+              
         }
             
            /* FXMLLoader loader = new FXMLLoader(getClass().getResource(("FXMLAjout2.fxml")));
@@ -217,27 +230,46 @@ ev.setPrix(prixEvenement);
     }
 
     @FXML
-    private void fileChooser(ActionEvent event) throws FileNotFoundException {
+    private void fileChooser(ActionEvent event) throws FileNotFoundException, IOException {
          
+       File dest=new File("C:\\wamp\\www\\Images");
+        
         fc.setInitialDirectory(new File("C:\\Users\\boussandel\\branche2\\Desktop\\images"));
-       selectedFile = fc.showOpenDialog(null);
+        selectedFile = fc.showOpenDialog(null);
+       if(selectedFile!=null){
+        FileUtils.copyFileToDirectory(selectedFile, dest);
         
-        if (selectedFile!= null ) {
-            FileInputStream input = new FileInputStream(selectedFile);
-            Image image = new Image(input);
-            fileImg.setText(selectedFile.getName());
-            imageViewAjout.setImage(image);
-            lblAjoutImage.setText("Image ajouté avec succée ");
-            //lblAjoutImage.styleProperty();
-            AjoutFile.setStyle("-fx-text-fill:green;");
-            
-            
-            
+        File newFile = new File("C:\\wamp\\www\\Images\\"+selectedFile.getName());
+        
+        FileInputStream input = new FileInputStream(newFile);
+        Image image = new Image(input);
+        fileImg.setText(newFile.getAbsolutePath()); 
+        imageViewAjout.setImage(image); 
+        lblAjoutImage.setText("image séléctionné avec succées");
+        lblAjoutImage.setStyle("");
+       }
+      
             
     }
         
-    }
     
+    /*@FXML
+    private void image(ActionEvent event) throws FileNotFoundException, IOException {
+        File dest=new File("C:\\wamp\\www\\Images");
+        
+        fc.setInitialDirectory(new File("C:\\Users\\GlaDio007\\Documents\\NetBeansProjects\\PiDev_Russia2018\\Images\\"));
+        selectedFile = fc.showOpenDialog(null);
+        FileUtils.copyFileToDirectory(selectedFile, dest);
+        
+        File newFile = new File("C:\\wamp\\www\\Images\\"+selectedFile.getName());
+        
+        FileInputStream input = new FileInputStream(newFile);
+        Image image = new Image(input);
+        cheminImage.setText(newFile.getAbsolutePath()); 
+        imageView.setImage(image);
+    }
+   
+    */
     
     private void image () {
         File file = new File("C:\\Users\\boussandel\\branche2\\Desktop\\images",image.getText());
@@ -262,7 +294,7 @@ ev.setPrix(prixEvenement);
         {
 
              
-            msgTitle="un champ nom est vide";
+             msgTitle="un champ nom est vide";
              msgContent="veillez remplir le champ nom  ";
              
             res = false ;
@@ -285,14 +317,14 @@ ev.setPrix(prixEvenement);
            
        }
        
-      if(date.getValue()==null) {
+   /*   if(date.getValue()==null) {
             msgTitle ="un champ date est vide";
             msgContent = "veillez remplir le champ date  ";
              
             res = false ;
            
            
-       }
+       }*/
        
        if(etat.getItems().toString().compareTo("")==0)
        {
@@ -333,13 +365,13 @@ ev.setPrix(prixEvenement);
             res = false ;
         }
         
-/*        if(date.getValue().isBefore(LocalDate.now())){
+      if(date.getValue().isBefore(LocalDate.now())){
             msgTitle ="Date invalide";
             msgContent = "veillez ajouté une date valide ";
              
             res = false ;
             
-        }*/
+        }
         
        // a compléter 
        
@@ -351,10 +383,12 @@ ev.setPrix(prixEvenement);
         
         
         
-        Alert alert = new Alert(Alert.AlertType.WARNING);
+       if(res == false ) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
              alert.setTitle(msgTitle);
              alert.setContentText(msgContent);
              alert.showAndWait();
+       }
         return res ; 
     }
     

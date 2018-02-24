@@ -7,7 +7,7 @@ package GUI;
 
 import Entités.Evenement;
 import Entités.Participation;
-import Entités.User;
+import Entités.Utilisateur;
 import Services.EvenementServices;
 import Services.ParticipationService;
 import com.jfoenix.controls.JFXButton;
@@ -290,7 +290,7 @@ if (result.get() == ButtonType.OK){
         } else {
             
             int nbrPlace = Integer.parseInt(lblnombre.getText());
-            int idUser = User.getInstance().getIdUser(); 
+            int idUser = Utilisateur.getInstance().getIdUser(); 
             int idEv = Integer.parseInt(lbleven.getText()) ;
             if(nbrPlace>1) {
                 nbrPlace=nbrPlace-1 ; 

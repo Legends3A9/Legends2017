@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane id="AnchorPane" prefHeight="981.0" prefWidth="1171.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MembreFrontController">
+   <children>
+      <JFXListView fx:id="list" layoutX="51.0" layoutY="175.0" prefHeight="625.0" prefWidth="535.0" />
+      <Rating fx:id="rat" layoutX="837.0" layoutY="869.0" prefHeight="37.0" prefWidth="176.0" />
+      <Separator layoutX="602.0" layoutY="168.0" orientation="VERTICAL" prefHeight="670.0" prefWidth="0.0" />
+      <AnchorPane layoutX="632.0" layoutY="168.0" prefHeight="454.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="40.0" layoutY="23.0" text="Nom Evenement : ">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="57.0" layoutY="76.0" text="Destination : ">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="121.0" text="Date Evenement : ">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="58.0" layoutY="167.0" text="Description : ">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="74.0" layoutY="215.0" text="Duree : ">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="78.0" layoutY="265.0" text="Type : ">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="82.0" layoutY="313.0" text="Etat : ">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="359.0" prefHeight="24.0" prefWidth="176.0" text="Nombre de places : ">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="83.0" layoutY="405.0" text="Prix : ">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="imgg" fitHeight="187.0" fitWidth="402.0" layoutX="713.0" layoutY="632.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="lblNom" layoutX="953.0" layoutY="187.0" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDest" layoutX="953.0" layoutY="237.0" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="953.0" layoutY="287.0" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDesc" layoutX="953.0" layoutY="333.0" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDure" layoutX="953.0" layoutY="384.0" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblType" layoutX="953.0" layoutY="434.0" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEtat" layoutX="953.0" layoutY="475.0" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNombre" layoutX="944.0" layoutY="522.0" prefHeight="28.0" prefWidth="69.0" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPrix" layoutX="957.0" layoutY="570.0" text="xxx" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="784.0" layoutY="112.0" text="Details Evenement : " textFill="#f51b1b">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="1061.0" layoutY="572.0" text="RUB">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="participer" layoutX="988.0" layoutY="930.0" mnemonicParsing="false" onAction="#participerAction" prefHeight="37.0" prefWidth="124.0" style="-fx-background-color: #00008B;" text="Participer " textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="evaluer" layoutX="857.0" layoutY="930.0" mnemonicParsing="false" onAction="#evaluerAction" prefHeight="37.0" prefWidth="115.0" style="-fx-background-color: #00008B;" text="Evaluer " textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="publier" layoutX="722.0" layoutY="930.0" mnemonicParsing="false" onAction="#publierAction" prefHeight="37.0" prefWidth="124.0" style="-fx-background-color: #00008B;" text="Publier " textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="19.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblid" layoutX="1073.0" layoutY="117.0">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEr" layoutX="751.0" layoutY="828.0" prefHeight="21.0" prefWidth="349.0" textFill="WHITE" />
+      <JFXTextField fx:id="jrech" layoutX="51.0" layoutY="122.0" onKeyPressed="#key" />
+      <Button fx:id="rechercher" layoutX="254.0" layoutY="125.0" mnemonicParsing="false" onAction="#rechercherAction" text="Rechercher" />
+      <Button fx:id="retour" layoutX="27.0" layoutY="928.0" mnemonicParsing="false" onAction="#retourAction" prefHeight="37.0" prefWidth="133.0" style="-fx-background-color: #FF0000;" text="retour" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="evtQue" layoutX="400.0" layoutY="125.0" mnemonicParsing="false" onAction="#evtQueAction" prefHeight="31.0" prefWidth="143.0" style="-fx-background-color: #00008B;" text="Où je participe " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Separator layoutX="45.0" layoutY="103.0" prefHeight="11.0" prefWidth="1113.0" />
+      <Text layoutX="51.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des Evénements : ">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Text>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>

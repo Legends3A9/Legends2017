@@ -6,6 +6,8 @@
 package IServices;
 
 import Entités.Participation;
+import static java.util.Collections.list;
+import java.util.List;
 
 /**
  *
@@ -14,4 +16,5 @@ import Entités.Participation;
 public interface IParticipation {
     
     public void ajouterParticipation (Participation p) ;
+    public List<Participation> participeDéja (int iduser);
 }

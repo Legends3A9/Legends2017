@@ -3,7 +3,7 @@ package Services;
 
 import DataBase.DB;
 import Entités.Evenement;
-import Entités.User;
+import Entités.Utilisateur;
 import IServices.IEvenement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -46,7 +46,7 @@ public class EvenementServices implements IEvenement {
                ps.setString(8,ev.getImage());
                ps.setInt(9,ev.getNbrPlaces());
                ps.setDouble(10,ev.getPrix());
-               ps.setInt(11,User.getIdd());
+               ps.setInt(11,Utilisateur.getIdd());
                System.out.println("evenement ajouté");
             
             ps.executeUpdate();
@@ -256,7 +256,7 @@ public class EvenementServices implements IEvenement {
         try {
 
             List<Evenement> evenements = new ArrayList<>();
-            int id = User.getInstance().getIdUser();
+            int id = Utilisateur.getInstance().getIdUser();
             String requete = "Select * from Evenement where idEvenement="+id;
             Statement statement = connection.createStatement();
             r = statement.executeQuery(requete);

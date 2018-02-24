@@ -7,25 +7,28 @@ package GUI;
 
 import java.io.IOException;
 import javafx.application.Application;
-import static javafx.application.Application.launch;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
  *
  * @author boussandel
  */
-public class GuiMain extends Application {
+public class TestGui extends Application {
     
     @Override
-    public void start(Stage primaryStage) {
-   FXMLLoader loader = new FXMLLoader(getClass().getResource("membreFront.fxml"));
+    public void start(Stage primaryStage) throws IOException {
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("membreFront.fxml"));
      // FXMLLoader loader = new FXMLLoader(getClass().getResource("frontEvaluer.fxml"));
-     // FXMLLoader loader = new FXMLLoader(getClass().getResource("Authentification.fxml"));
+    //FXMLLoader loader = new FXMLLoader(getClass().getResource("Authentification.fxml"));
       // FXMLLoader loader = new FXMLLoader(getClass().getResource("EvtQueJeParticipe.fxml"));
-  // FXMLLoader loader = new FXMLLoader(getClass().getResource("GestionEve.fxml"));
+    //  FXMLLoader loader = new FXMLLoader(getClass().getResource("GestionEve.fxml"));
        //FXMLLoader loader = new FXMLLoader(getClass().getResource("FRONTmembre.fxml"));
     //  FXMLLoader loader = new FXMLLoader(getClass().getResource("ConsulterEvaluation.fxml"));
         
@@ -37,20 +40,13 @@ public class GuiMain extends Application {
            stage.setScene(scene);
            //stage.sizeToScene();
            stage.show();
-           
-            
-            
-        }
+         }
         catch(IOException ex) {
-              
-
-            
-            
-            
+       
+        
         }
     }
 
-    
     /**
      * @param args the command line arguments
      */

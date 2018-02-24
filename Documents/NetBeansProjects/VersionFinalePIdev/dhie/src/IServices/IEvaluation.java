@@ -6,6 +6,8 @@
 package IServices;
 
 import Entités.Evaluation;
+import Entités.Participation;
+import java.util.List;
 
 /**
  *
@@ -14,5 +16,8 @@ import Entités.Evaluation;
 public interface IEvaluation {
     
     public void ajouterEvaluation(Evaluation e) ;
+    public List<Evaluation> findAll();
+    public double moyByName(int id);
+    public List<Evaluation> evalueDéja(int id);
     
 }
