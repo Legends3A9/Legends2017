@@ -262,12 +262,14 @@ public class FrontEvaluerController implements Initializable {
          if(evaluerDéja()==true) {
            
            evaluer.setDisable(true);
-
+           rat.setDisable(true);
+            
 
          }
          
          else {
              evaluer.setDisable(false);
+             rat.setDisable(false);
          }
         // participer.setDisable(false); 
         
@@ -275,7 +277,7 @@ public class FrontEvaluerController implements Initializable {
         Double moy = ess.moyByName(eqp.getIdEvenement());
         
         //rat.setRating(moy);
-        rat.setDisable(false);
+        
          
             
         Image image2 = new Image(file.toURI().toString());

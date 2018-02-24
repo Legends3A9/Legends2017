@@ -24,9 +24,9 @@ public class TestGui extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("membreFront.fxml"));
+     //  FXMLLoader loader = new FXMLLoader(getClass().getResource("membreFront.fxml"));
      // FXMLLoader loader = new FXMLLoader(getClass().getResource("frontEvaluer.fxml"));
-    //FXMLLoader loader = new FXMLLoader(getClass().getResource("Authentification.fxml"));
+   FXMLLoader loader = new FXMLLoader(getClass().getResource("Authentification.fxml"));
       // FXMLLoader loader = new FXMLLoader(getClass().getResource("EvtQueJeParticipe.fxml"));
     //  FXMLLoader loader = new FXMLLoader(getClass().getResource("GestionEve.fxml"));
        //FXMLLoader loader = new FXMLLoader(getClass().getResource("FRONTmembre.fxml"));
