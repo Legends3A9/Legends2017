@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane id="AnchorPane" prefHeight="931.0" prefWidth="1263.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.EvtQueJeParticipeController">
+   <children>
+      <ListView fx:id="list" layoutX="70.0" layoutY="160.0" prefHeight="691.0" prefWidth="575.0" />
+      <Label fx:id="lblNom" layoutX="965.0" layoutY="153.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <Label fx:id="lbldest" layoutX="966.0" layoutY="202.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <Label fx:id="lbldesc" layoutX="966.0" layoutY="265.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <Label fx:id="lblDuree" layoutX="962.0" layoutY="319.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <Label fx:id="lbldate" layoutX="966.0" layoutY="379.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <Label fx:id="lblEtat" layoutX="960.0" layoutY="500.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <Label fx:id="lblNombre" layoutX="956.0" layoutY="548.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <Label fx:id="lblPrix" layoutX="962.0" layoutY="607.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <ImageView fx:id="imgg" fitHeight="150.0" fitWidth="448.0" layoutX="731.0" layoutY="668.0" pickOnBounds="true" preserveRatio="true" />
+      <Rating fx:id="rat" layoutX="904.0" layoutY="849.0" />
+      <Label fx:id="lblType" layoutX="965.0" layoutY="442.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <Label fx:id="lblid" layoutX="1110.0" layoutY="102.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <Text layoutX="886.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Détails Evenement: ">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <Label layoutX="708.0" layoutY="156.0" text="Nom évenement : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="731.0" layoutY="202.0" text="Destination : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="731.0" layoutY="265.0" text="Description : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="756.0" layoutY="319.0" text="Duree : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="762.0" layoutY="379.0" text="Date : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="761.0" layoutY="441.0" text="Type : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="766.0" layoutY="500.0" text="Etat : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="702.0" layoutY="548.0" text="Nombre de Places : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="753.0" layoutY="607.0" text="Prix : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="78.0" layoutY="106.0" text="Vous Participer à ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="284.0" layoutY="106.0" text="evénements :  ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="num" layoutX="235.0" layoutY="106.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Separator layoutX="14.0" layoutY="81.0" prefHeight="20.0" prefWidth="1226.0" />
+      <Text layoutX="23.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Evénement que je participe ">
+         <font>
+            <Font name="System Bold Italic" size="33.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
