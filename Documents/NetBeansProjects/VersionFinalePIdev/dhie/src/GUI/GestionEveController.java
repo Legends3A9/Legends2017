@@ -98,7 +98,7 @@ public class GestionEveController implements Initializable {
     @FXML
     private JFXTextField Jdes;
     @FXML
-    private JFXTextField jDuree;
+    private ComboBox<String> jDuree;
     @FXML
     private JFXTextField jType;
     @FXML
@@ -147,6 +147,8 @@ public class GestionEveController implements Initializable {
     private TableColumn<?, ?> ideeev;
     @FXML
     private Button contacter;
+    @FXML
+    private Label lblUserr;
        
   
 
@@ -167,6 +169,8 @@ public class GestionEveController implements Initializable {
        image();
        
        etas.getItems().addAll("disponible" ,"réservé");
+               jDuree.getItems().addAll("Quelque heures","une journée","Plus Q'une journée");
+
        
        Services.EvenementServices es = new EvenementServices(); 
       
@@ -276,7 +280,8 @@ public class GestionEveController implements Initializable {
                 jnbr.setText(Integer.toString(pl.getNbrPlaces()));
                 jprix.setText(Float.toString(pl.getPrix()));
                 jDesc.setText(pl.getDescription()) ; 
-                jDuree.setText(pl.getDuree());
+                jDuree.setValue(pl.getDuree());
+                lblUserr.setText(Integer.toString(pl.getId_user()));
                 
                 image ();
                
@@ -321,7 +326,7 @@ public class GestionEveController implements Initializable {
         jnbr.setText("");
         jprix.setText("");
         jDesc.setText("") ; 
-        jDuree.setText("");
+        jDuree.setValue("");
         
         data.clear();
         loadDataFromDatabase();
@@ -362,11 +367,13 @@ public class GestionEveController implements Initializable {
         String nomE = (jNom.getText());
         Date datefe = (Date.valueOf(date.getValue()));
         String destE = Jdes.getText() ;
-        String dureeE = jDuree.getText(); 
+        String dureeE = jDuree.getValue(); 
         String typeE = jType.getText(); 
         String etatE = etas.getValue(); 
         String descE = jDesc.getText(); 
         String image = image1.getText() ; 
+        int idUser = Integer.parseInt(lblUserr.getText());
+        //int idUser = i
         float prixE = Float.parseFloat(jprix.getText());
         int nbrP = Integer.parseInt(jnbr.getText()) ;
         Evenement even = new Evenement(); 
@@ -381,6 +388,7 @@ public class GestionEveController implements Initializable {
         even.setPrix(prixE);
         even.setImage(image);
         even.setNbrPlaces(nbrP);
+        even.setId_user(idUser);
        
       Services.EvenementServices se = new EvenementServices();
        se.modifierEvenement(even, idE);

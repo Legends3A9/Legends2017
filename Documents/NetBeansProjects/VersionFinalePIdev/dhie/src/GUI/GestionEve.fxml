@@ -94,7 +94,6 @@
                   <Font name="System Bold Italic" size="15.0" />
                </font></Label>
             <Label fx:id="lbl12" layoutX="943.0" layoutY="221.0" prefHeight="21.0" prefWidth="219.0" textFill="#ff0101" />
-            <JFXTextField fx:id="jDuree" layoutX="149.0" layoutY="92.0" maxWidth="162.0" minWidth="147.0" prefHeight="37.0" prefWidth="162.0" promptText="Duree" />
             <Label layoutX="526.0" layoutY="165.0" prefHeight="21.0" prefWidth="43.0" text="RUB">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
@@ -103,6 +102,8 @@
             <ImageView fx:id="imageView1" fitHeight="212.0" fitWidth="295.0" layoutX="895.0" layoutY="17.0" onDragDetected="#mettreImages" pickOnBounds="true" preserveRatio="true" />
             <JFXTextField fx:id="image1" layoutX="1026.0" layoutY="28.0" maxWidth="132.0" minWidth="0.0" prefHeight="37.0" prefWidth="0.0" />
             <ComboBox fx:id="etas" layoutX="658.0" layoutY="95.0" prefWidth="150.0" promptText="etat" />
+            <ComboBox fx:id="jDuree" layoutX="155.0" layoutY="95.0" prefWidth="150.0" promptText="duree" />
+            <Label fx:id="lblUserr" layoutX="281.0" layoutY="-10.0" text="Label" />
          </children>
       </AnchorPane>
       <JFXButton fx:id="supprimer" layoutX="1143.0" layoutY="827.0" onAction="#deleteAction" style="-fx-background-color: #FF0000;" text="Supprimer " textFill="WHITE">

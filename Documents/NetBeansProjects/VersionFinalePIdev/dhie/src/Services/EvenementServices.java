@@ -319,6 +319,49 @@ public class EvenementServices implements IEvenement {
         }
      }
 
+    @Override
+    public List<Evenement> mesPubs(int id) {
+        try {
+
+            List<Evenement> evenements = new ArrayList<>();
+          
+            String requete = "Select * from evenement where idUser="+id;
+            Statement statement = connection.createStatement();
+            r = statement.executeQuery(requete);
+            
+            while (r.next()) {
+                Evenement f = new Evenement();
+                f.setIdEvenement(r.getInt("idEvenement"));
+               f.setNomEvenement(r.getString("nomEvenement"));
+               f.setDescription(r.getString("description"));
+               f.setDateEvenement(r.getDate("dateEvenement"));
+               f.setDuree(r.getString("duree"));
+               f.setDestination(r.getString("destination"));
+               f.setType(r.getString("type"));
+               
+               f.setEtat(r.getString("etat"));
+               f.setImage(r.getString("image"));
+               
+               f.setNbrPlaces(r.getInt("nombrePlace"));
+               f.setPrix(r.getFloat("prix"));
+               f.setId_user(r.getInt("idUser"));
+               
+               evenements.add(f);
+                
+            }
+           
+            return evenements;
+        } catch (SQLException ex) {
+            Logger.getLogger(Services.EvenementServices.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        
+
+
+    }
+
+   
+
         
     }
     

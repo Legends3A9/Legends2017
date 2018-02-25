@@ -6,6 +6,7 @@
 package IServices;
 
 import Entités.Evenement;
+import java.util.List;
 import javafx.collections.ObservableList;
 
 /**
@@ -20,6 +21,7 @@ public interface IEvenement {
     public ObservableList<Evenement> afficher () ;
     public void decrementation_nbrPlaces(int idEv , int nbrPlace) ;
     public void decrEtChangementDetat(int idev);
-
+public List<Evenement> mesPubs (int id);
+   
     
 }

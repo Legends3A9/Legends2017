@@ -24,14 +24,15 @@ public class TestGui extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-     //  FXMLLoader loader = new FXMLLoader(getClass().getResource("membreFront.fxml"));
+    // FXMLLoader loader = new FXMLLoader(getClass().getResource("membreFront.fxml"));
      // FXMLLoader loader = new FXMLLoader(getClass().getResource("frontEvaluer.fxml"));
-   FXMLLoader loader = new FXMLLoader(getClass().getResource("Authentification.fxml"));
+FXMLLoader loader = new FXMLLoader(getClass().getResource("Authentification.fxml"));
       // FXMLLoader loader = new FXMLLoader(getClass().getResource("EvtQueJeParticipe.fxml"));
-    //  FXMLLoader loader = new FXMLLoader(getClass().getResource("GestionEve.fxml"));
-       //FXMLLoader loader = new FXMLLoader(getClass().getResource("FRONTmembre.fxml"));
+ // FXMLLoader loader = new FXMLLoader(getClass().getResource("GestionEve.fxml"));
+  //     FXMLLoader loader = new FXMLLoader(getClass().getResource("FRONTmembre.fxml"));
     //  FXMLLoader loader = new FXMLLoader(getClass().getResource("ConsulterEvaluation.fxml"));
-        
+ // FXMLLoader loader = new FXMLLoader(getClass().getResource("FrontMembrePub.fxml"));
+  //  FXMLLoader loader = new FXMLLoader(getClass().getResource("Ajout.fxml"));
         try {
            Parent root =  loader.load() ; 
            Scene scene = new Scene(root);

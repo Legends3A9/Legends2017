@@ -26,7 +26,7 @@ public class Dhie {
      */
     public static void main(String[] args) {
         
-         /* String str="2015-03-31";  
+      String str="2015-03-31";  
     Date date=Date.valueOf(str);//converting string into sql date
        
      Services.EvenementServices es = new EvenementServices();
@@ -36,7 +36,8 @@ Evenement e = new Evenement("louay","dldl","dldld", date, "ddss","dlsds","smdds"
        es.modifierEvenement(e, 54);
      // es.supprimerEvenement(10);
      //es.ajouterEvenement(e);
-        */
+   es.mesPubs(34);
+        System.out.println( es.mesPubs(34).toString());
         
         
         //es.findAll();
@@ -62,10 +63,10 @@ Evenement e = new Evenement("louay","dldl","dldld", date, "ddss","dlsds","smdds"
         Evenement e2 = new Evenement(15,"journee","dhdhdh",date , "jhhhhh","hdhdhdh","dhdhdhd","djdjhdhdh","dhdhdhdh",52,10,16) ;
        Services.EvenementServices es = new EvenementServices(); 
        es.ajouterEvenement(e2);*/
-   Evaluation r = new Evaluation(34, 59, 0, "nomParticipant", "prenomParticipant", "emailParticipant", "nomEvenement");
+  /* Evaluation r = new Evaluation(34, 59, 0, "nomParticipant", "prenomParticipant", "emailParticipant", "nomEvenement");
        Services.EvaluationService see = new EvaluationService();
        see.ajouterEvaluation(r);
-       see.evalueDéja(34);
+       see.evalueDéja(34);*/
        
      //  Services.EvaluationService ess2 = new EvaluationService(); 
        //ess2.moyByName("dhia");       
