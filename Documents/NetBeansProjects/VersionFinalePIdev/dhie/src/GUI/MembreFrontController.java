@@ -40,6 +40,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -116,6 +117,8 @@ public class MembreFrontController implements Initializable {
     private Button evaluer;
     @FXML
     private Button evtQue;
+    @FXML
+    private Button mesPub;
 
     @FXML
     private void participerAction(ActionEvent event) {
@@ -225,6 +228,19 @@ if (result.get() == ButtonType.OK){
                 
                 stage.initModality(Modality.APPLICATION_MODAL);
 
+                stage.setScene(scene);
+                stage.show();
+    }
+
+    @FXML
+    private void mesPublicitation(ActionEvent event) throws IOException {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource(("FrontMembrePub.fxml")));
+         
+                ((Node)(event.getSource())).getScene().getWindow().hide();
+
+                Parent root = loader.load();
+                Scene scene = new Scene(root);
+                Stage stage = new Stage () ;
                 stage.setScene(scene);
                 stage.show();
     }

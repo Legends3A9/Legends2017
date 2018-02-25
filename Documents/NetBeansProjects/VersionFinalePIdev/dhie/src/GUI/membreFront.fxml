@@ -160,6 +160,7 @@
             <Font name="System Bold Italic" size="30.0" />
          </font>
       </Text>
+      <Button fx:id="mesPub" layoutX="570.0" layoutY="125.0" mnemonicParsing="false" onAction="#mesPublicitation" text="Mes Publicictaions" />
    </children>
    <opaqueInsets>
       <Insets />

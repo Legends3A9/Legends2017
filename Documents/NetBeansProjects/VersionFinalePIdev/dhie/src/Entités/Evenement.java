@@ -257,6 +257,11 @@ public class Evenement {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Evenement{" + "idEvenement=" + idEvenement + ", nomEvenement=" + nomEvenement + ", destination=" + destination + ", description=" + description + ", dateEvenement=" + dateEvenement + ", etat=" + etat + ", duree=" + duree + ", type=" + type + ", image=" + image + ", nbrPlaces=" + nbrPlaces + ", id_user=" + id_user + ", prix=" + prix + '}';
+    }
     
     
     
