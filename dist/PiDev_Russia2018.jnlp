@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="PiDev_Russia2018.jar" size="67595" download="eager" />
+    <jar href="PiDev_Russia2018.jar" size="60647" download="eager" />
     <jar href="lib\commons-io-2.6.jar" size="214788" download="eager" />
     <jar href="lib\controlsfx-8.40.11.jar" size="985420" download="eager" />
     <jar href="lib\itextpdf-5.4.1.jar" size="1898417" download="eager" />

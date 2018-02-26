@@ -160,8 +160,7 @@ public class AfficherProduitsController implements Initializable {
         
         
         quantite.addEventFilter(KeyEvent.KEY_TYPED , numeric_Validation());
-        marque.addEventFilter(KeyEvent.KEY_TYPED , letter_Validation());
-        couleur.addEventFilter(KeyEvent.KEY_TYPED , letter_Validation());
+
         prix.addEventFilter(KeyEvent.KEY_TYPED , float_Validation());
         
         
@@ -478,6 +477,14 @@ public EventHandler<KeyEvent> float_Validation() {
             quantiteErreur.setVisible(true);
         else
             quantiteErreur.setVisible(false);
+    }
+
+    @FXML
+    private void Deconnection(ActionEvent event) throws IOException {
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("Authentification.fxml"));
+        Parent root = loader.load();
+        Scene scene = label.getScene();
+        scene.setRoot(root);
     }
 
     

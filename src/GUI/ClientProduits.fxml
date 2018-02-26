@@ -86,5 +86,6 @@
       <Button fx:id="btnAfficherPanier" layoutX="866.0" layoutY="923.0" mnemonicParsing="false" onAction="#afficherPanier" prefHeight="31.0" prefWidth="154.0" text="Afficher Panier" />
       <ImageView fx:id="imageView" fitHeight="285.0" fitWidth="307.0" layoutX="974.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="cheminImage" layoutX="552.0" layoutY="738.0" visible="false" />
+      <Button layoutX="1149.0" layoutY="33.0" mnemonicParsing="false" onAction="#Deconnection" text="Se Deconnecter" />
    </children>
 </AnchorPane>

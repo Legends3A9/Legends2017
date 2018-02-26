@@ -59,5 +59,6 @@
       <Label fx:id="nomErreur" layoutX="415.0" layoutY="550.0" prefHeight="21.0" prefWidth="132.0" text="Donnée non valide" textFill="RED" visible="false" />
       <Label fx:id="prixErreur" layoutX="415.0" layoutY="677.0" prefHeight="21.0" prefWidth="132.0" text="Donnée non valide" textFill="RED" visible="false" />
       <Label fx:id="quantiteErreur" layoutX="415.0" layoutY="746.0" prefHeight="21.0" prefWidth="132.0" text="Donnée non valide" textFill="RED" visible="false" />
+      <Button layoutX="1086.0" layoutY="31.0" mnemonicParsing="false" onAction="#Deconnection" text="Se Deconnecter" />
    </children>
 </AnchorPane>

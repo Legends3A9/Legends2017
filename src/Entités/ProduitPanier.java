@@ -26,6 +26,7 @@ public class ProduitPanier {
     private String marque;
     private String couleur;
     private String description;
+    private int quantiteAchete;
 
     @Override
     public int hashCode() {

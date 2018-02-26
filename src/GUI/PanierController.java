@@ -8,7 +8,6 @@ package GUI;
 import Entités.ProduitPanier;
 import Entités.Utilisateur;
 import Services.ServiceProduitPanier;
-import Services.ServiceProduit;
 import Services.UserService;
 import java.io.File;
 import java.net.URL;
@@ -50,6 +49,8 @@ public class PanierController implements Initializable {
     private boolean selected= false;
     @FXML
     private Label idprod;
+    @FXML
+    private Button btnpayer;
 
     @FXML
     private void supprimer(ActionEvent event) {

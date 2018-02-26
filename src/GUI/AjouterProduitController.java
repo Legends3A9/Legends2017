@@ -102,8 +102,6 @@ public class AjouterProduitController implements Initializable {
         );
         typeProduit.setItems(List);
         quantiteProduit.addEventFilter(KeyEvent.KEY_TYPED , numeric_Validation());
-        marqueProduit.addEventFilter(KeyEvent.KEY_TYPED , letter_Validation());
-        couleurProduit.addEventFilter(KeyEvent.KEY_TYPED , letter_Validation());
         prixProduit.addEventFilter(KeyEvent.KEY_TYPED , float_Validation());
     }
         
@@ -279,6 +277,14 @@ public EventHandler<KeyEvent> float_Validation() {
             quantiteError.setVisible(true);
         else
             quantiteError.setVisible(false);
+    }
+
+    @FXML
+    private void Deconnection(ActionEvent event) throws IOException {
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("Authentification.fxml"));
+        Parent root = loader.load();
+        Scene scene = btn.getScene();
+        scene.setRoot(root);
     }
 
     

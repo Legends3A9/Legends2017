@@ -59,41 +59,7 @@ public class MenuController implements Initializable {
 
     @FXML
     private void Ajouter(ActionEvent event) throws IOException {
-            /*
-       ListView<String> listView = new ListView<String>();
-        ObservableList<String> items =FXCollections.observableArrayList (
-                "RUBY", "APPLE", "VISTA", "TWITTER");
-        listView.setItems(items);
-
-        listView.setCellFactory(param -> new ListCell<String>() {
-            private ImageView imageView = new ImageView();
-            @Override
-            public void updateItem(String name, boolean empty) {
-                super.updateItem(name, empty);
-                if (empty) {
-                    setText(null);
-                    setGraphic(null);
-                } else {
-                    if(name.equals("RUBY"))
-                        imageView.setImage(listOfImages[0]);
-                    else if(name.equals("APPLE"))
-                        imageView.setImage(listOfImages[1]);
-                    else if(name.equals("VISTA"))
-                        imageView.setImage(listOfImages[2]);
-                    else if(name.equals("TWITTER"))
-                        imageView.setImage(listOfImages[3]);
-                    setText(name);
-                    setGraphic(imageView);
-                }
-            }
-        });
-        VBox box = new VBox(listView);
-        box.setAlignment(Pos.CENTER);
-        Scene scene = new Scene(box, 200, 200);
-        Stage stage= new Stage();
-        stage.setScene(scene);
-        stage.show();
-*/
+  
             FXMLLoader loader=new FXMLLoader(getClass().getResource("ClientProduits.fxml"));
         
             Parent root = loader.load();

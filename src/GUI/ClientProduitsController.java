@@ -110,6 +110,14 @@ public class ClientProduitsController implements Initializable {
        
     }
 
+    @FXML
+    private void Deconnection(ActionEvent event) throws IOException {
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("Authentification.fxml"));
+        Parent root = loader.load();
+        Scene scene = couleurlbl.getScene();
+        scene.setRoot(root);
+    }
+
 
     /**
      * Initializes the controller class.
