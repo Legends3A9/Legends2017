@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="1007.0" prefWidth="1248.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficherProduitsController">
+   <children>
+      <Label layoutX="48.0" layoutY="550.0" prefHeight="21.0" prefWidth="101.0" text="Nom Produit :" />
+      <TableView fx:id="view" layoutX="7.0" layoutY="167.0" prefHeight="341.0" prefWidth="1235.0" tableMenuButtonVisible="true">
+        <columns>
+          <TableColumn fx:id="id_e" minWidth="0.0" prefWidth="0.0" text="Id" />
+          <TableColumn fx:id="label_e" prefWidth="285.9999694824219" text="Label" />
+            <TableColumn fx:id="type_e" prefWidth="90.0" text="Type" />
+            <TableColumn fx:id="prix_e" prefWidth="151.0" text="Prix" />
+            <TableColumn fx:id="quantite_e" prefWidth="155.0" text="Quantite" />
+            <TableColumn fx:id="image_e" minWidth="0.0" prefWidth="0.0" text="Image" />
+            <TableColumn fx:id="taille_e" prefWidth="103.0" text="Taille" />
+            <TableColumn fx:id="marque_e" prefWidth="115.0" text="Marque" />
+            <TableColumn fx:id="couleur_e" prefWidth="118.0" text="Couleur" />
+            <TableColumn fx:id="description_e" prefWidth="216.0" text="Description" />
+        </columns>
+      </TableView>
+      <TextField fx:id="id" editable="false" layoutX="992.0" layoutY="615.0" visible="false" />
+      <TextField fx:id="label" layoutX="219.0" layoutY="545.0" onKeyReleased="#nomTest" />
+      <ComboBox fx:id="type" layoutX="219.0" layoutY="615.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="prix" layoutX="219.0" layoutY="672.0" onKeyReleased="#prixTest" />
+      <TextField fx:id="quantite" layoutX="219.0" layoutY="741.0" onKeyReleased="#quantiteTest" />
+      <TextField fx:id="taille" layoutX="220.0" layoutY="808.0" />
+      <TextField fx:id="marque" layoutX="779.0" layoutY="545.0" />
+      <TextField fx:id="couleur" layoutX="779.0" layoutY="615.0" />
+      <TextField fx:id="description" layoutX="779.0" layoutY="676.0" />
+      <Label layoutX="52.0" layoutY="677.0" text="Prix :" />
+      <Label layoutX="48.0" layoutY="620.0" text="Type :" />
+      <Label layoutX="48.0" layoutY="746.0" text="Quantite :" />
+      <Label layoutX="48.0" layoutY="813.0" text="Taille :" />
+      <Label layoutX="625.0" layoutY="550.0" text="Marque :" />
+      <Label layoutX="625.0" layoutY="620.0" text="Couleur :" />
+      <Label layoutX="624.0" layoutY="681.0" text="Description :" />
+      <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="187.0" layoutX="779.0" layoutY="732.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="browse" layoutX="624.0" layoutY="733.0" mnemonicParsing="false" onAction="#image" prefHeight="31.0" prefWidth="83.0" text="Browse" />
+      <Button fx:id="ajout" layoutX="699.0" layoutY="953.0" mnemonicParsing="false" onAction="#ajouterProduit" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: #2489d6;" text="Ajouter" textFill="WHITE" />
+      <Button fx:id="modifier" layoutX="827.0" layoutY="953.0" mnemonicParsing="false" onAction="#modifierProduit" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: #2489d6;" text="Modifier" textFill="WHITE" />
+      <Button fx:id="supprimer" layoutX="947.0" layoutY="953.0" mnemonicParsing="false" onAction="#supprimerProduit" style="-fx-background-color: #dd3232;" text="Supprimer" textFill="WHITE" />
+      <TextField fx:id="cheminImage" cache="true" editable="false" layoutX="992.0" layoutY="545.0" />
+      <Label alignment="CENTER" layoutX="538.0" layoutY="21.0" text="Gestion Produit" textFill="#2408d7">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="113.0" prefHeight="21.0" prefWidth="178.0" text="Chercher produit par nom:" />
+      <TextField fx:id="rech" layoutX="219.0" layoutY="108.0" prefHeight="31.0" prefWidth="286.0" />
+      <Label fx:id="nomErreur" layoutX="415.0" layoutY="550.0" prefHeight="21.0" prefWidth="132.0" text="Donnée non valide" textFill="RED" visible="false" />
+      <Label fx:id="prixErreur" layoutX="415.0" layoutY="677.0" prefHeight="21.0" prefWidth="132.0" text="Donnée non valide" textFill="RED" visible="false" />
+      <Label fx:id="quantiteErreur" layoutX="415.0" layoutY="746.0" prefHeight="21.0" prefWidth="132.0" text="Donnée non valide" textFill="RED" visible="false" />
+   </children>
+</AnchorPane>
