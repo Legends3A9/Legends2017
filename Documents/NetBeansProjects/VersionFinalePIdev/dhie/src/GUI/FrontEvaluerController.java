@@ -106,7 +106,7 @@ public class FrontEvaluerController implements Initializable {
     private Button evaluer;
 
     @FXML
-    private void evaluerAction(ActionEvent event) {
+    private void evaluerAction(ActionEvent event) throws IOException {
         String nomEven = lblnom.getText();
         String  nomEval = Utilisateur.getNomParticipant();
         String prenolEval = Utilisateur.getPrenomParticipant();
@@ -125,6 +125,7 @@ public class FrontEvaluerController implements Initializable {
         e.setNomParticipant(nomEval);
         Services.EvaluationService ess = new EvaluationService() ; 
         ess.ajouterEvaluation(e);
+        list.refresh();
         
         System.out.println("evaluation ajouté");
         System.out.println("sssssss"+Utilisateur.getNomParticipant());
@@ -133,11 +134,13 @@ public class FrontEvaluerController implements Initializable {
             alert.setContentText("Evaluation ajouté avec succées  ");
             alert.showAndWait();
           
-           /* Parent pagereclamationfront = FXMLLoader.load(getClass().getResource("EvenMembre.fxml"));
-        Scene reclamationfront_scene = new Scene(pagereclamationfront);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(reclamationfront_scene);
-        app_stage.show();*/
+           Stage stage = new Stage();
+             ((Node)(event.getSource())).getScene().getWindow().hide();
+                 Parent root = FXMLLoader.load(getClass().getResource("membreFront.fxml"));
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+
     }
 
  
@@ -173,11 +176,23 @@ public class FrontEvaluerController implements Initializable {
                             rss.getStylesheets().add("GUI/fxml1.css");
                            
                         if (item != null) {
+                            Text t =new Text(item.getNomEvenement().toString());
+                            Text t2 =new Text(item.getDateEvenement().toString());
+                            Text t3 =new Text(item.getDestination());
+                            Text t4 = new Text(item.getEtat());
+                          /*  if(item.getEtat().toLowerCase().equals("réservé")){
+                            t4.setStyle("-fx-text-fill: red;");
+                             }*/
+                            t.setStyle("-fx-font-size: 25 arial;");
+                            t2.setStyle("-fx-font-size: 20 arial;");
+                            t3.setStyle("-fx-font-size: 20 arial;");
+                            t4.setStyle("-fx-font-size: 20 arial;");
+                                  
                             double moy = ess.moyByName(item.getIdEvenement()); 
                             rss.setRating(moy);
                             
-                            VBox vBox = new VBox(rss,new Text(item.getNomEvenement()),new Text(item.getNomEvenement()),new Text(item.getDestination()));
-                             File file = new File("C:\\Users\\boussandel\\branche2\\Desktop\\images\\"+item.getImage());
+                            VBox vBox = new VBox(rss,t,t2,t3,t4);
+                             File file = new File(item.getImage());
             
         Image image = new Image(file.toURI().toString());
         ImageView img = new ImageView(image); 
@@ -186,12 +201,12 @@ public class FrontEvaluerController implements Initializable {
                             
                             HBox hBox = new HBox(img, vBox);
                            
-                            Text t =new Text(item.getDateEvenement().toString());
+                       /*     Text t =new Text(item.getDateEvenement().toString());
                             Text t2 =new Text(item.getNomEvenement());
                             Text t3 =new Text(item.getDestination());
                             t.setStyle("-fx-font-size: 18 arial;");
                             t2.setStyle("-fx-font-size: 25 arial;");
-                            t3.setStyle("-fx-font-size: 20 arial;");
+                            t3.setStyle("-fx-font-size: 20 arial;"); */
                             hBox.setSpacing(10);
                             setGraphic(hBox);
     } 
@@ -248,8 +263,8 @@ public class FrontEvaluerController implements Initializable {
                     File file = new File("C:\\Users\\boussandel\\branche2\\Desktop\\images\\"+eqp.getImage());
                     evaluer.setDisable(false);
             
-        Image image = new Image(file.toURI().toString());
-        lblid.setText(Integer.toString(eqp.getIdEvenement()));
+         Image image = new Image(file.toURI().toString());
+         lblid.setText(Integer.toString(eqp.getIdEvenement()));
          lblnom.setText(eqp.getNomEvenement());
          lbldate.setText(eqp.getDateEvenement().toString());
          jdesc.setText(eqp.getDescription());
