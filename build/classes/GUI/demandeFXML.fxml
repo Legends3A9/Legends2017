@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="741.0" prefWidth="1123.0" style="-fx-background-color: #1E90FF;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DemandeFXMLController">
+   <children>
+      <ListView fx:id="list" layoutX="7.0" layoutY="78.0" prefHeight="618.0" prefWidth="471.0" />
+      <Label fx:id="prix1" layoutX="846.0" layoutY="76.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="type1" layoutX="846.0" layoutY="116.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="adresse1" layoutX="846.0" layoutY="160.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="nb_place_dispo1" layoutX="846.0" layoutY="204.0" prefHeight="17.0" prefWidth="0.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="description1" layoutX="846.0" layoutY="247.0" textFill="#0a0a0a">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="610.0" layoutY="76.0" text="Prix" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="610.0" layoutY="116.0" text="Type" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="610.0" layoutY="160.0" text="Adresse" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="609.0" layoutY="204.0" text="Nombre de place disponible" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="611.0" layoutY="247.0" text="Description" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="609.0" layoutY="285.0" text="Numero de telephone" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="demander" layoutX="700.0" layoutY="672.0" mnemonicParsing="false" onAction="#demander" style="-fx-background-color: #32CD32;" text="Demander" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="ajout" layoutX="680.0" layoutY="31.0" mnemonicParsing="false" onAction="#ajout" style="-fx-background-color: #1100ff;" text="Ajouter une offre" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="898.0" layoutY="76.0" text="Pуб">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <ImageView fx:id="image" fitHeight="293.0" fitWidth="358.0" layoutX="609.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="cheminImage" layoutX="937.0" layoutY="667.0" textFill="RED" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="610.0" layoutY="325.0" text="Etat" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="etat1" layoutX="845.0" layoutY="325.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="id1" layoutX="541.0" layoutY="559.0" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="tel1" layoutX="846.0" layoutY="285.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="51.0" layoutY="26.0" text="Liste des offres de collocation" textFill="#fc0000">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Separator layoutX="51.0" layoutY="61.0" prefHeight="2.0" prefWidth="350.0" />
+      <Label fx:id="dinar" layoutX="982.0" layoutY="76.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="1040.0" layoutY="76.0" text="TND">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

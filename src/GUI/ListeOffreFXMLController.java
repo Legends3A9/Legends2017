@@ -6,7 +6,7 @@
 package GUI;
 
 
-import entities.offreuser;
+import Entités.offreuser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -45,7 +45,7 @@ import javafx.stage.FileChooser;
 import javafx.util.Duration;
 import org.apache.commons.io.FileUtils;
 import org.controlsfx.control.textfield.TextFields;
-import service.offreuserService;
+import Services.offreuserService;
 import tray.animations.AnimationType;
 import tray.notification.TrayNotification;
 
@@ -245,7 +245,7 @@ public class ListeOffreFXMLController implements Initializable {
     @FXML
     private void supprimer(ActionEvent event) {
         int idE = Integer.valueOf(id1.getText());
-        service.offreuserService ser = new offreuserService();
+        Services.offreuserService ser = new offreuserService();
         ser.DeletoffreByID(idE);
         id1.setText("");
         prix1.setText("");

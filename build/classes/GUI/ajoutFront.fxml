@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="606.0" prefWidth="725.0" style="-fx-background-color: #1E90FF;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjoutFrontController">
+    <children>
+      <Label layoutX="103.0" layoutY="96.0" text="Type" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="103.0" layoutY="145.0" text="Prix" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="103.0" layoutY="235.0" text="Adresse" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="103.0" layoutY="297.0" text="Nombre de places disponibles" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="103.0" layoutY="361.0" text="Description" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField id="type" fx:id="type" layoutX="376.0" layoutY="92.0" />
+      <TextField id="prix" fx:id="prix" layoutX="376.0" layoutY="142.0" />
+      <Button fx:id="img" layoutX="395.0" layoutY="181.0" mnemonicParsing="false" onAction="#source" text="Choisir une image">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TextField id="adresse" fx:id="adresse" layoutX="376.0" layoutY="232.0" />
+      <TextField id="nb_place_dispo" fx:id="nb_place_dispo" layoutX="376.0" layoutY="293.0" />
+      <TextField id="description" fx:id="description" layoutX="376.0" layoutY="357.0" />
+      <TextField id="tel" fx:id="tel" layoutX="376.0" layoutY="413.0" />
+      <TextField fx:id="etat" layoutX="377.0" layoutY="461.0" />
+      <Button fx:id="ajouter" layoutX="308.0" layoutY="531.0" mnemonicParsing="false" onAction="#ajouter" style="-fx-background-color: #32CD32;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="235.0" layoutY="25.0" text="Ajouter une offre" textFill="RED">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label layoutX="103.0" layoutY="416.0" text="Numero telephone" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Button fx:id="retour" layoutX="55.0" layoutY="48.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: #ff0000;" text="Retour" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="103.0" layoutY="185.0" text="Image" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="cheminImage" layoutX="584.0" layoutY="185.0" visible="false" />
+      <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="180.0" layoutX="544.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview" fitHeight="150.0" fitWidth="200.0" layoutX="525.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="affichage" layoutX="576.0" layoutY="48.0" mnemonicParsing="false" onAction="#affichage" style="-fx-background-color: #1100ff;" text="Afficher mes offres" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Separator layoutX="220.0" layoutY="60.0" prefHeight="3.0" prefWidth="230.0" style="-fx-background-color: #1E90FF;" />
+      <Label layoutX="102.0" layoutY="463.0" text="Etat" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

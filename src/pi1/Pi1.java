@@ -5,9 +5,6 @@
  */
 package pi1;
 
-import entities.*;
-import service.*;
-
 /**
  *
  * @author Alaa

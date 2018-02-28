@@ -5,7 +5,7 @@
  */
 package GUI;
 
-import entities.offreuser;
+import Entités.offreuser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -40,7 +40,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.util.Duration;
 import org.apache.commons.io.FileUtils;
-import service.offreuserService;
+import Services.offreuserService;
 import tray.animations.AnimationType;
 import tray.notification.TrayNotification;
 
@@ -144,7 +144,7 @@ public class ListFrontController implements Initializable {
         adresse1.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(300));
         prix1.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(10));
         etat1.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(300));
-        service.offreuserService os = new service.offreuserService();
+        Services.offreuserService os = new Services.offreuserService();
         loadDataFromDatabase();
         list.setCellFactory(lv -> new Collocation());
 
@@ -292,7 +292,7 @@ public class ListFrontController implements Initializable {
         String imageE = (cheminImage.getText());
         String etatE = etat1.getText();
         offreuser o = new offreuser(idE, typeE, prixE, adresseE, nb_place_dispoE, descriptionE, telE, imageE, etatE);
-        service.offreuserService ser = new offreuserService();
+        Services.offreuserService ser = new offreuserService();
         ser.updateoffre(o);
         data.clear();
         loadDataFromDatabase();

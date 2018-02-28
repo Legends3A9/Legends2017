@@ -5,7 +5,7 @@
  */
 package GUI;
 
-import entities.offreuser;
+import Entités.offreuser;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -27,7 +27,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.scene.layout.VBox;
-import entities.participationC;
+import Entités.participationC;
 import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
@@ -47,8 +47,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
 import javafx.util.Duration;
 import org.controlsfx.control.textfield.TextFields;
-import service.offreuserService;
-import service.participationcService;
+import Services.offreuserService;
+import Services.participationcService;
 import tray.animations.AnimationType;
 import tray.notification.TrayNotification;
 
@@ -126,17 +126,17 @@ public class DemandeFXMLController implements Initializable {
                 if (nbrPlace > 1) {
                     nbrPlace = nbrPlace - 1;
 
-                    service.offreuserService es = new offreuserService();
+                    Services.offreuserService es = new offreuserService();
                     es.decrementation_nbrPlaces(ido, nbrPlace);
-                    service.participationcService ps = new participationcService();
+                    Services.participationcService ps = new participationcService();
                     participationC p = new participationC(1, ido);
                     ps.ajouterParticipation(p);
 
                     list.refresh();
                 } else if (nbrPlace == 1) {
-                    service.offreuserService es = new offreuserService();
+                    Services.offreuserService es = new offreuserService();
                     es.decrEtChangementDetat(ido);
-                    service.participationcService ps = new participationcService();
+                    Services.participationcService ps = new participationcService();
                     participationC p = new participationC(1, ido);
                     ps.ajouterParticipation(p);
 
@@ -198,7 +198,7 @@ public class DemandeFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        service.offreuserService os = new service.offreuserService();
+        Services.offreuserService os = new Services.offreuserService();
 
         data = FXCollections.observableArrayList();
 

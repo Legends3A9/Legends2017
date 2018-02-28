@@ -5,7 +5,7 @@
  */
 package GUI;
 
-import entities.offreuser;
+import Entités.offreuser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -32,7 +32,7 @@ import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import javafx.util.Duration;
 import org.apache.commons.io.FileUtils;
-import service.offreuserService;
+import Services.offreuserService;
 import tray.animations.AnimationType;
 import tray.notification.TrayNotification;
 
@@ -147,7 +147,7 @@ public class AjoutFrontController implements Initializable {
             String imageS = cheminImage.getText();
             String etatS = etat.getText();
             offreuser ou = new offreuser(typeS, Float.parseFloat(prixS), adresseS, Integer.parseInt(nb_place_dispoS), descriptionS, Integer.parseInt(telS), imageS, etatS, 1);
-            service.offreuserService su = new offreuserService();
+            Services.offreuserService su = new offreuserService();
             su.insereroffre(ou);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("offre ajouté");
