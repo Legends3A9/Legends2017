@@ -6,9 +6,10 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="741.0" prefWidth="1123.0" style="-fx-background-color: #1E90FF;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DemandeFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="741.0" prefWidth="1123.0" style="-fx-background-color: #1E90FF;" styleClass="backbg" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DemandeFXMLController">
    <children>
       <ListView fx:id="list" layoutX="7.0" layoutY="78.0" prefHeight="618.0" prefWidth="471.0" />
       <Label fx:id="prix1" layoutX="846.0" layoutY="76.0">
@@ -108,5 +109,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
+      <VBox alignment="TOP_CENTER" layoutX="462.0" layoutY="104.0" prefHeight="200.0" prefWidth="100.0" />
    </children>
 </AnchorPane>
