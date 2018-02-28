@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterFormFXMLController">
+   <children>
+      <TextField fx:id="nom_stade" layoutX="226.0" layoutY="29.0" />
+      <TextField fx:id="region" layoutX="226.0" layoutY="65.0" />
+      <TextField fx:id="adresse" layoutX="226.0" layoutY="104.0" />
+      <TextField fx:id="surface" layoutX="226.0" layoutY="188.0" />
+      <TextField fx:id="capacite" layoutX="226.0" layoutY="228.0" />
+      <TextField fx:id="image" layoutX="226.0" layoutY="272.0" />
+      <Label layoutX="138.0" layoutY="33.0" text="nom" />
+      <Label layoutX="138.0" layoutY="69.0" text="region" />
+      <Label layoutX="138.0" layoutY="108.0" text="adresse" />
+      <Label layoutX="138.0" layoutY="152.0" text="date construction" />
+      <Label layoutX="138.0" layoutY="192.0" text="surface" />
+      <Label layoutX="138.0" layoutY="232.0" text="capacite" />
+      <Label layoutX="138.0" layoutY="276.0" text="image" />
+      <DatePicker fx:id="date_construction" layoutX="214.0" layoutY="148.0" />
+      <Button fx:id="ajouter" layoutX="375.0" layoutY="344.0" mnemonicParsing="false" onAction="#ActionAjouter" text="ajouter" />
+      <Button fx:id="imagea" layoutX="421.0" layoutY="272.0" mnemonicParsing="false" onAction="#ImageAction" text="choisir image" />
+      <Button fx:id="consulter" layoutX="465.0" layoutY="344.0" mnemonicParsing="false" onAction="#ConsulterAction" text="consulter stade" />
+   </children>
+</AnchorPane>
