@@ -9,8 +9,26 @@ import Entités.ProduitPanier;
 import Entités.Utilisateur;
 import Services.ServiceProduitPanier;
 import Services.UserService;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Font.FontFamily;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -51,6 +69,8 @@ public class PanierController implements Initializable {
     private Label idprod;
     @FXML
     private Button btnpayer;
+    @FXML
+    private Button btnfacture;
 
     @FXML
     private void supprimer(ActionEvent event) {
@@ -97,6 +117,96 @@ public class PanierController implements Initializable {
         loadDataFromDatabase();
         
     }
+    
+
+    @FXML
+    private void GenererFacture(ActionEvent event) throws FileNotFoundException, DocumentException {
+    ServiceProduitPanier service=new ServiceProduitPanier();
+    List<ProduitPanier> produits=service.selectAll();
+  
+    Document document = new Document(PageSize.A4);
+    PdfPTable table = new PdfPTable(4);
+      PdfPCell Cell ;
+    
+      PdfWriter.getInstance(document, new FileOutputStream("Facture.pdf"));
+      document.open();
+      document.addTitle("Facture");
+      
+      
+     
+      Font f = new Font(FontFamily.COURIER, 24, Font.BOLD, BaseColor.CYAN);
+      Paragraph p5 = new Paragraph("Facture",f);
+      p5.setAlignment(Element.ALIGN_CENTER);
+      p5.setSpacingAfter(50);
+      document.add(p5);
+     
+      DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+      Paragraph pdate = new Paragraph("               Date de facture : "+dateFormat.format(new Date()));
+      document.add(pdate);
+      
+      Paragraph nomUser = new Paragraph("               Facture a : "+"Souhail Majerdi");
+      nomUser.setSpacingAfter(50);
+      document.add(nomUser);
+      
+      Cell=new PdfPCell(new Phrase("Nom du produit", FontFactory.getFont("Comic Sans MS",12))); 
+      Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+      Cell.setBackgroundColor(BaseColor.GRAY);
+      table.addCell(Cell);
+      
+      Cell=new PdfPCell(new Phrase("Marque du produit", FontFactory.getFont("Comic Sans MS",12)));
+      Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+      Cell.setBackgroundColor(BaseColor.GRAY);
+      table.addCell(Cell);
+      
+      Cell=new PdfPCell(new Phrase("Type du Produit", FontFactory.getFont("Comic Sans MS",12)));
+      Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+      Cell.setBackgroundColor(BaseColor.GRAY);
+      table.addCell(Cell);
+      
+      Cell=new PdfPCell(new Phrase("Prix du produit", FontFactory.getFont("Comic Sans MS",12)));
+      Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+      Cell.setBackgroundColor(BaseColor.GRAY);
+      table.addCell(Cell);
+      
+      
+      for(ProduitPanier prod : produits)
+      {
+          Cell=new PdfPCell(new Phrase(prod.getLabel(),FontFactory.getFont("Arial",11)));
+          Cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+          table.addCell(Cell);
+          
+          Cell=new PdfPCell(new Phrase(prod.getMarque(),FontFactory.getFont("Arial",11)));
+          Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+          table.addCell(Cell);
+          
+          Cell=new PdfPCell(new Phrase(prod.getType(),FontFactory.getFont("Arial",11)));
+          Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+          table.addCell(Cell);
+          
+          Cell=new PdfPCell(new Phrase(String.valueOf(prod.getPrix())+ "€",FontFactory.getFont("Arial",11)));
+          Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+          table.addCell(Cell);
+          
+          
+      }
+          Cell=new PdfPCell(new Phrase("Total = "+total.getText()+ "€",FontFactory.getFont("Arial",11)));
+          Cell.setColspan(5);
+          Cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+          table.addCell(Cell);
+          
+          
+ 
+         
+          
+          
+      
+      
+   
+          document.add(table);
+          document.close();
+         
+  }
+    
 
     /**
      * Initializes the controller class.
@@ -128,7 +238,7 @@ public class PanierController implements Initializable {
                            
                            
                             
-                            VBox vBox = new VBox(new Text(item.getLabel()),new Text(item.getMarque()), new Text(String.valueOf(item.getPrix())));
+                            VBox vBox = new VBox(new Text(item.getLabel()),new Text(item.getMarque()), new Text(String.valueOf(item.getPrix())),new Text("quantité acheté : 1"));
                              File file = new File(item.getImage());
             
                             Image image = new Image(file.toURI().toString());
@@ -142,6 +252,7 @@ public class PanierController implements Initializable {
                             Text t2 =new Text(item.getLabel());
                             Text t3 =new Text(item.getMarque());
                             Text t4 =new Text(String.valueOf(item.getPrix()));
+                            Text t5 =new Text("quantité acheté : 1");
                             
                              t2.setStyle("-fx-font-size: 25 arial;");
                               t3.setStyle("-fx-font-size: 20 arial;");

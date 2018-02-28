@@ -72,6 +72,8 @@ public class ClientProduitsController implements Initializable {
 
     @FXML
     private void ajouterPanier(ActionEvent event) {
+        
+        
         if (selected == false) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error Dialog");

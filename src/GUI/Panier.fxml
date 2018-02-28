@@ -19,5 +19,6 @@
       <Label fx:id="total" layoutX="105.0" layoutY="589.0" />
       <Label fx:id="idprod" layoutX="129.0" layoutY="717.0" visible="false" />
       <Button fx:id="btnpayer" layoutX="594.0" layoutY="626.0" mnemonicParsing="false" onAction="#payer" prefHeight="38.0" prefWidth="146.0" text="Payer" />
+      <Button fx:id="btnfacture" layoutX="594.0" layoutY="686.0" mnemonicParsing="false" onAction="#GenererFacture" prefHeight="38.0" prefWidth="146.0" text="Generer Facture" />
    </children>
 </AnchorPane>
