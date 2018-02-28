@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLFrontController">
+   <children>
+      <JFXListView fx:id="list" layoutX="7.0" layoutY="87.0" prefHeight="285.0" prefWidth="350.0" AnchorPane.bottomAnchor="298.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="422.0" AnchorPane.topAnchor="87.0" />
+      <JFXComboBox fx:id="poules" layoutX="85.0" layoutY="43.0" prefHeight="25.0" prefWidth="154.0" />
+      <Label layoutX="14.0" layoutY="42.0" text="Poules">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Separator layoutY="374.0" prefHeight="25.0" prefWidth="770.0" />
+      <ImageView fx:id="flag" fitHeight="94.0" fitWidth="163.0" layoutX="484.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="497.0" layoutY="401.0" text="Equipe ;" />
+      <Separator layoutX="348.0" layoutY="384.0" orientation="VERTICAL" prefHeight="285.0" prefWidth="5.0" />
+      <PieChart fx:id="pie" layoutX="16.0" layoutY="397.0" prefHeight="258.0" prefWidth="320.0" title="Coupe" />
+      <ImageView fx:id="i" fitHeight="39.0" fitWidth="55.0" layoutX="114.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="eq" layoutX="548.0" layoutY="400.0" prefHeight="17.0" prefWidth="76.0" textFill="#4033d3">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="vote" layoutX="497.0" layoutY="540.0" prefHeight="17.0" prefWidth="218.0" />
+      <Label fx:id="ev" layoutX="434.0" layoutY="540.0" prefHeight="17.0" prefWidth="0.0" textFill="#5518ff">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXListView fx:id="listjoueur" layoutX="402.0" layoutY="91.0" prefHeight="277.0" prefWidth="292.0" />
+      <Label layoutX="469.0" layoutY="54.0" text="Joueurs: ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="tj" layoutX="558.0" layoutY="54.0" textFill="#ff1b1b">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

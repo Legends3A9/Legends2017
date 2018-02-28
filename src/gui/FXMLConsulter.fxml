@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anc" prefHeight="578.0" prefWidth="776.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLConsulterController">
+   <children>
+      <ComboBox fx:id="poules" layoutX="330.0" layoutY="80.0" prefHeight="25.0" prefWidth="86.0" />
+      <Label layoutX="341.0" layoutY="38.0" text="Poule">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="373.0" layoutY="73.0" startX="-100.0" />
+      <Label layoutX="276.0" layoutY="84.0" text="Poule  :" />
+      <Separator layoutX="-10.0" layoutY="131.0" prefHeight="17.0" prefWidth="765.0" />
+      <TableView fx:id="tequipes" layoutX="21.0" layoutY="148.0" prefHeight="200.0" prefWidth="703.0" stylesheets="@../css/style.css">
+        <columns>
+          <TableColumn fx:id="cid" prefWidth="53.0" text="ID" />
+          <TableColumn fx:id="cequipe" prefWidth="115.0" text="Equipe" />
+            <TableColumn fx:id="cpoule" prefWidth="55.0" text="Poule" />
+            <TableColumn fx:id="ccon" prefWidth="147.0" text="Continent" />
+            <TableColumn fx:id="cnbr" prefWidth="129.0" text="Nombre Joueur" />
+            <TableColumn fx:id="cpar" prefWidth="89.0" text="Participation" />
+            <TableColumn fx:id="ccou" prefWidth="114.0" text="Coupe" />
+            <TableColumn fx:id="ct" minWidth="0.0" prefWidth="0.0" text="Taux Victoire" />
+        </columns>
+      </TableView>
+      <AnchorPane fx:id="a" layoutX="21.0" layoutY="365.0" prefHeight="200.0" prefWidth="755.0">
+         <children>
+            <ImageView fx:id="img" fitHeight="91.0" fitWidth="96.0" layoutX="-1.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="111.0" layoutY="55.0" text="Equipe :" />
+            <TextField fx:id="teq" layoutX="158.0" layoutY="51.0" prefHeight="25.0" prefWidth="96.0" />
+            <Label layoutX="10.0" layoutY="21.0" text="ID:" />
+            <TextField fx:id="tid" disable="true" editable="false" layoutX="31.0" layoutY="17.0" prefHeight="25.0" prefWidth="45.0" />
+            <Label layoutX="270.0" layoutY="55.0" text="Poule" />
+            <Label layoutX="425.0" layoutY="55.0" text="Continent" />
+            <Label layoutX="133.0" layoutY="101.0" text="Nombre Joueur" />
+            <TextField fx:id="tnj" layoutX="233.0" layoutY="97.0" prefHeight="25.0" prefWidth="43.0" />
+            <Label layoutX="300.0" layoutY="101.0" text="Participation" />
+            <TextField fx:id="tp" layoutX="373.0" layoutY="97.0" prefHeight="25.0" prefWidth="43.0" />
+            <Label layoutX="443.0" layoutY="101.0" text="Coupe" />
+            <TextField fx:id="tc" layoutX="484.0" layoutY="97.0" prefHeight="25.0" prefWidth="43.0" />
+            <Button fx:id="mod" layoutX="274.0" layoutY="158.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: #2489d6;" text="Modifier" textFill="WHITE" />
+            <Button fx:id="del" layoutX="369.0" layoutY="158.0" mnemonicParsing="false" onAction="#del" style="-fx-background-color: red;" text="Supprimer" textFill="WHITE" />
+            <ComboBox fx:id="tcon" layoutX="484.0" layoutY="51.0" prefHeight="25.0" prefWidth="143.0" />
+            <ComboBox fx:id="tpou" layoutX="326.0" layoutY="51.0" prefHeight="25.0" prefWidth="83.0" />
+         </children>
+      </AnchorPane>
+      <Separator layoutX="-8.0" layoutY="356.0" prefHeight="1.0" prefWidth="793.0" />
+   </children>
+</AnchorPane>

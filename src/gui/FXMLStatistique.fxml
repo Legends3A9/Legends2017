@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="1205.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLStatistiqueController">
+   <children>
+      <BarChart fx:id="ContinentBar" layoutX="83.0" layoutY="156.0" prefHeight="400.0" prefWidth="397.0" title="Equipe Par Continent">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="x" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="y" side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Label fx:id="userlogo" layoutX="450.0" layoutY="90.0" text="Statistique" textFill="#4b09ff">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="-6.0" prefHeight="82.0" prefWidth="1215.0" style="-fx-background-color: #3C33FF;">
+         <children>
+            <ImageView fx:id="imageUser" fitHeight="80.0" fitWidth="113.0" layoutX="38.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+            <JFXButton fx:id="deco" layoutX="1069.0" layoutY="30.0" onAction="#deco" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: red;" text="Deconnexion" textFill="WHITE">
+               <font>
+                  <Font name="Arial Narrow Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="username" layoutX="168.0" layoutY="27.0" prefHeight="17.0" prefWidth="92.0" text="User" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="512.0" layoutY="156.0" orientation="VERTICAL" prefHeight="434.0" prefWidth="19.0" />
+      <BarChart fx:id="paris" layoutX="531.0" layoutY="156.0" prefHeight="400.0" prefWidth="656.0" title="Vote Par Equipe">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="x2" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="y2" label="Vote" side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>
