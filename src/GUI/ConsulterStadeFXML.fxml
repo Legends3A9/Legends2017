@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1098.0" style="-fx-background-color: #17aad6;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ConsulterStadeFXMLController">
+   <opaqueInsets>
+      <Insets bottom="20.0" left="20.0" top="20.0" />
+   </opaqueInsets>
+   <top>
+      <Label text="Voici la liste des stades " textFill="#440cd3" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+   </top>
+   <left>
+      <ScrollPane fx:id="scrollPane" prefHeight="576.0" prefWidth="187.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="574.0" prefWidth="185.0">
+               <children>
+                  <VBox fx:id="vbox" prefHeight="200.0" prefWidth="187.0" style="-fx-background-color: #17aad6;" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="283.0" layoutY="106.0" text="Details des stades">
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="nom_stadeA" layoutX="357.0" layoutY="159.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="regionA" layoutX="357.0" layoutY="185.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="adresseA" layoutX="356.0" layoutY="211.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="date_constructionA" layoutX="356.0" layoutY="239.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="surfaceA" layoutX="356.0" layoutY="270.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="capaciteA" layoutX="356.0" layoutY="297.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="234.0" layoutY="159.0" text="Nom du stade :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="118.0" layoutY="183.0" text="La Region ou se trouve ce stade :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="215.0" layoutY="209.0" text="Adresse du stade :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="147.0" layoutY="237.0" text="Date Construction du stade :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="218.0" layoutY="268.0" text="Surface du stade :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="209.0" layoutY="295.0" text="Capacité du stade :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imageA" fitHeight="240.0" fitWidth="306.0" layoutX="177.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="localiser" layoutX="593.0" layoutY="475.0" mnemonicParsing="false" onAction="#ActionLocaliser" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #0eff00; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="Localiser Stade" textFill="WHITE" />
+            <Button fx:id="retour" layoutX="789.0" layoutY="477.0" mnemonicParsing="false" onAction="#RetourAction" prefHeight="34.0" prefWidth="98.0" style="-fx-background-color: #960505; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="RETOUR" textFill="WHITE" />
+            <Separator layoutX="280.0" layoutY="140.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
