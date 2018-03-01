@@ -4,9 +4,13 @@
  * and open the template in the editor.
  */
 package GUI;
+import Entités.Stade;
+import Entités.Utilisateur;
+import Entités.Match;
+import Services.*;
+import Services.MatchService;
+import Services.UserService;
 import utils.EnvoyerEmail;
-import Entites.*;
-import Service.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
@@ -217,8 +221,8 @@ public class TableController implements Initializable {
          
        
            
-        File file = new File("G:\\"+equipe11.getText().toLowerCase()+".png");
-        File file1 = new File("G:\\"+equipe21.getText().toLowerCase()+".png");
+        File file = new File("C:\\xampp\\htdocs\\image\\"+equipe11.getText().toLowerCase()+".jpg");
+        File file1 = new File("C:\\xampp\\htdocs\\image\\"+equipe21.getText().toLowerCase()+".jpg");
         Image image = new Image(file.toURI().toString());
         Image image1 = new Image(file1.toURI().toString());
         drapeau1.setImage(image);
@@ -253,7 +257,7 @@ public class TableController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             int id= Integer.valueOf(id1.getText());
-            Service.MatchService ser = new MatchService();
+            Services.MatchService ser = new MatchService();
             ser.DeletAebitreByID(id);  
             id1.setText("");
             equipe11.setText("");
@@ -347,7 +351,7 @@ public class TableController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             int id= Integer.valueOf(id1.getText());
-            Service.MatchService ser = new MatchService();
+            Services.MatchService ser = new MatchService();
             ser.DeletAebitreByID(id);  
             id1.setText("");
             equipe11.setText("");

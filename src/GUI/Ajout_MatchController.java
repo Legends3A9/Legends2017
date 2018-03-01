@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package GUI;
-import Entites.*;
-import Service.*;
+import Entités.*;
+import Services.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
@@ -119,7 +119,7 @@ public class Ajout_MatchController implements Initializable {
             @Override public void changed(ObservableValue ov, String t, String t1) {
                 equipe2.getItems().clear();
                 equipe1.getItems().clear();
-                EquipeService es = new EquipeService();
+                 EquipeService es = new EquipeService();
         List<Equipe> eqs = new ArrayList<>();
         try {
             eqs= es.equipeParPoule(t1);
@@ -274,7 +274,7 @@ public class Ajout_MatchController implements Initializable {
          
          Match m = new Match(equipe1S, equipe2S, date_mat, time_mat, stadeS, type_phaseS, type_matchS);
          
-         Service.MatchService sm = new MatchService();
+         Services.MatchService sm = new MatchService();
          List <Match> mat =sm.selectMatch();
          
          

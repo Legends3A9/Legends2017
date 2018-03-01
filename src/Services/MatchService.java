@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Service;
+package Services;
 
 import DB.DB;
-import Entites.Match;
+import Entités.Match;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

@@ -5,8 +5,8 @@
  */
 package GUI;
 
-import Entites.*;
-import Service.*;
+import Entités.Utilisateur;
+import Services.UserService;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
@@ -48,7 +48,7 @@ public class AuthentificationController implements Initializable {
 
     @FXML
     private void connexion(ActionEvent event) throws IOException {
-        Service.UserService us = new UserService(); 
+        Services.UserService us = new UserService(); 
        Utilisateur user =us.authentication(jlogin.getText(), jpass.getText()); 
         if(user.getIdUser()<1) {
            
@@ -58,7 +58,7 @@ public class AuthentificationController implements Initializable {
 
                 
         
-            if(user.getRole().toLowerCase().equals("admin"))
+            if(user.getRole().toLowerCase().equals("dsc"))
             {   
                Parent root = FXMLLoader.load(getClass().getResource("table.fxml"));
                 Scene scene = new Scene(root);
@@ -81,6 +81,8 @@ public class AuthentificationController implements Initializable {
         Utilisateur.setPrenomParticipant(user.getPrenom());
         Utilisateur.setEmailEv(user.getEmail());
         Utilisateur.setRoleUser(user.getRole());
+     
+        
         System.out.println(user.getIdd());
     }
 

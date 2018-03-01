@@ -1,7 +1,6 @@
 package    utils;
 
-import Entites.*;
-import Service.*;
+import Entités.Utilisateur;
 import java.util.List;
 import java.util.Properties;
 import javax.mail.Message;

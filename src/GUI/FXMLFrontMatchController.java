@@ -5,11 +5,16 @@
  */
 package GUI;
 
-import Entites.*;
-import Service.*;
+import Entités.Pronostic;
+import Entités.Utilisateur;
+import Entités.Match;
+import Services.MatchService;
+import Services.PronosticService;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -24,8 +29,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -35,9 +42,12 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 
 /**
@@ -85,6 +95,131 @@ public class FXMLFrontMatchController implements Initializable {
     private String radio;
     @FXML
     private Label id;
+    @FXML
+    private JFXButton deco;
+    @FXML
+    private Button poule;
+    @FXML
+    private Button stade1;
+    @FXML
+    private Button event;
+    @FXML
+    private Button store;
+    @FXML
+    private Button match1;
+    @FXML
+    private Button ticket;
+    @FXML
+    private Button colocation;
+
+     @FXML
+    private void deco(ActionEvent event) throws IOException {
+        Stage stage = (Stage) deco.getScene().getWindow();
+        stage.close();
+    
+        AnchorPane parentContent= FXMLLoader.load(getClass().getResource("Authentification.fxml"));
+        Scene scene = new Scene(parentContent); 
+        stage.setScene(scene);
+  
+        stage.sizeToScene();
+        stage.show();   
+    }
+
+    @FXML
+    private void poul(ActionEvent event) throws IOException {
+        
+           Stage stage = (Stage) deco.getScene().getWindow();
+        stage.close();
+    
+        AnchorPane parentContent= FXMLLoader.load(getClass().getResource("FXMLFront.fxml"));
+        Scene scene = new Scene(parentContent); 
+        stage.setScene(scene);
+  
+        stage.sizeToScene();
+        stage.show();  
+    }
+
+    @FXML
+    private void stad(ActionEvent event) throws IOException {
+           Stage stage = (Stage) stade.getScene().getWindow();
+        stage.close();
+    
+        BorderPane parentContent= FXMLLoader.load(getClass().getResource("ConsulterStadeFXML.fxml"));
+        Scene scene = new Scene(parentContent); 
+        stage.setScene(scene);
+  
+        stage.sizeToScene();
+        stage.show();  
+    }
+
+    @FXML
+    private void event(ActionEvent event) throws IOException {
+           Stage stage = (Stage) deco.getScene().getWindow();
+        stage.close();
+    
+        AnchorPane parentContent= FXMLLoader.load(getClass().getResource("ConsulterStadeFXML.fxml"));
+        Scene scene = new Scene(parentContent); 
+        stage.setScene(scene);
+  
+        stage.sizeToScene();
+        stage.show();  
+    }
+
+    @FXML
+    private void stor(ActionEvent event) throws IOException {
+      /*     Stage stage = (Stage) deco.getScene().getWindow();
+        stage.close();
+    
+        AnchorPane parentContent= FXMLLoader.load(getClass().getResource("ClientProduits.fxml"));
+        Scene scene = new Scene(parentContent); 
+        stage.setScene(scene);
+  
+        stage.sizeToScene();
+        stage.show();  */
+    }
+
+    @FXML
+    private void matc(ActionEvent event) throws IOException {
+           Stage stage = (Stage) deco.getScene().getWindow();
+        stage.close();
+    
+        AnchorPane parentContent= FXMLLoader.load(getClass().getResource("FXMLFrontMatch.fxml"));
+        Scene scene = new Scene(parentContent); 
+        stage.setScene(scene);
+  
+        stage.sizeToScene();
+        stage.show();  
+    
+    }
+
+    @FXML
+    private void ticke(ActionEvent event) throws IOException {
+           Stage stage = (Stage) deco.getScene().getWindow();
+        stage.close();
+    
+        AnchorPane parentContent= FXMLLoader.load(getClass().getResource("AcheterTicketFXML.fxml"));
+        Scene scene = new Scene(parentContent); 
+        stage.setScene(scene);
+  
+        stage.sizeToScene();
+        stage.show();  
+    
+        
+    }
+
+    @FXML
+    private void colo(ActionEvent event) throws IOException {
+            Stage stage = (Stage) deco.getScene().getWindow();
+        stage.close();
+    
+        AnchorPane parentContent= FXMLLoader.load(getClass().getResource("demandeFXML.fxml"));
+        Scene scene = new Scene(parentContent); 
+        stage.setScene(scene);
+  
+        stage.sizeToScene();
+        stage.show();  
+    
+    }
 
    
 
@@ -107,13 +242,13 @@ public class FXMLFrontMatchController implements Initializable {
                            
                         if (item != null) { 
                             
-            File file = new File("G:\\scs.png");
+            File file = new File("C:\\xampp\\htdocs\\image\\"+item.getEquipe1().toLowerCase()+".jpg");
         Image image = new Image(file.toURI().toString());
         ImageView img = new ImageView(image); 
         img.setFitHeight(50);
         img.setFitWidth(90);
-         File file2 = new File("G:\\scs.png");
-        Image image2 = new Image(file.toURI().toString());
+         File file2 = new File("C:\\xampp\\htdocs\\image\\"+item.getEquipe2().toLowerCase()+".jpg");
+        Image image2 = new Image(file2.toURI().toString());
         ImageView img2 = new ImageView(image2); 
         img2.setFitHeight(50);
         img2.setFitWidth(90);
@@ -251,10 +386,10 @@ public class FXMLFrontMatchController implements Initializable {
             public void handle(MouseEvent event) {
                 
                 Match match = list.getItems().get(list.getSelectionModel().getSelectedIndex());
-                    File file = new File("G:\\scs.png");
+                    File file = new File("C:\\xampp\\htdocs\\image\\"+match.getEquipe1().toLowerCase()+".jpg");
                     Image image = new Image(file.toURI().toString());
                     
-                    File file1 = new File("G:\\scs.png");
+                    File file1 = new File("C:\\xampp\\htdocs\\image\\"+match.getEquipe2().toLowerCase()+".jpg");
                     Image image1 = new Image(file1.toURI().toString());
             equipe11.setImage(image); 
             equipe22.setImage(image1); 
