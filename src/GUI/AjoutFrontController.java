@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Entités.Utilisateur;
 import Entités.offreuser;
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,6 +34,8 @@ import javafx.stage.FileChooser;
 import javafx.util.Duration;
 import org.apache.commons.io.FileUtils;
 import Services.offreuserService;
+import javafx.scene.Node;
+import javafx.stage.Stage;
 import tray.animations.AnimationType;
 import tray.notification.TrayNotification;
 
@@ -75,6 +78,8 @@ public class AjoutFrontController implements Initializable {
     private Button affichage;
     @FXML
     private TextField etat;
+    @FXML
+    private Button decon;
 
     /**
      * Initializes the controller class.
@@ -146,7 +151,7 @@ public class AjoutFrontController implements Initializable {
             String telS = tel.getText();
             String imageS = cheminImage.getText();
             String etatS = etat.getText();
-            offreuser ou = new offreuser(typeS, Float.parseFloat(prixS), adresseS, Integer.parseInt(nb_place_dispoS), descriptionS, Integer.parseInt(telS), imageS, etatS, 1);
+            offreuser ou = new offreuser(typeS, Float.parseFloat(prixS), adresseS, Integer.parseInt(nb_place_dispoS), descriptionS, Integer.parseInt(telS), imageS, etatS, Utilisateur.getIdd());
             Services.offreuserService su = new offreuserService();
             su.insereroffre(ou);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -204,6 +209,16 @@ public class AjoutFrontController implements Initializable {
         ListFrontController listControler = loader.getController();
         Scene scene = affichage.getScene();
         scene.setRoot(root);
+    }
+
+    @FXML
+    private void deconn(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("Authentification.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

@@ -5,7 +5,7 @@
 }
 
 .table-view{
-    -fx-base: #008287;
+    -fx-base: #ff0000;
     -fx-control-inner-background: #e6f7ff;
     -fx-background-color:transparent;
     -fx-table-cell-border-color: transparent;
@@ -24,7 +24,7 @@
     -fx-font-size: 13px;
     -fx-font-weight:bold;
     -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
-    -fx-text-fill: #d8d8d8;
+    -fx-text-fill: #ffffff;
     -fx-alignment: center-left;
     -fx-opacity: 1;
 }
@@ -37,5 +37,17 @@
 }
 
 .table-view:focused .table-row-cell:filled:focused:selected {
-    -fx-background-color:  #4183D7;
+    -fx-background-color:  #ff0000;
+}
+
+.backbgb
+{
+    -fx-background-image:url("/image/rouge.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.backbga
+{
+    -fx-background-image:url("/image/generic.png");
+    -fx-background-size: 100% 100%;
 }

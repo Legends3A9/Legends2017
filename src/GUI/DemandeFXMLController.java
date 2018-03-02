@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Entités.Utilisateur;
 import Entités.offreuser;
 import java.net.URL;
 import java.sql.Connection;
@@ -31,9 +32,6 @@ import Entités.participationC;
 import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
-import java.util.function.Predicate;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -41,14 +39,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
 import javafx.util.Duration;
-import org.controlsfx.control.textfield.TextFields;
 import Services.offreuserService;
 import Services.participationcService;
+import javafx.scene.Node;
+import javafx.stage.Stage;
 import tray.animations.AnimationType;
 import tray.notification.TrayNotification;
 
@@ -90,6 +88,8 @@ public class DemandeFXMLController implements Initializable {
     private Label id1;
     @FXML
     private Label dinar;
+    @FXML
+    private Button decon;
 
     @FXML
     private void demander(ActionEvent event) throws SQLException {
@@ -121,7 +121,6 @@ public class DemandeFXMLController implements Initializable {
                 tray.showAndDismiss(Duration.seconds(10));
 
                 int nbrPlace = Integer.parseInt(nb_place_dispo1.getText());
-                // int idUser = Utilisateur.getInstance().getIdUser(); 
                 int ido = Integer.parseInt(id1.getText());
                 if (nbrPlace > 1) {
                     nbrPlace = nbrPlace - 1;
@@ -129,7 +128,7 @@ public class DemandeFXMLController implements Initializable {
                     Services.offreuserService es = new offreuserService();
                     es.decrementation_nbrPlaces(ido, nbrPlace);
                     Services.participationcService ps = new participationcService();
-                    participationC p = new participationC(1, ido);
+                    participationC p = new participationC(Utilisateur.getIdd(), ido);
                     ps.ajouterParticipation(p);
 
                     list.refresh();
@@ -137,7 +136,7 @@ public class DemandeFXMLController implements Initializable {
                     Services.offreuserService es = new offreuserService();
                     es.decrEtChangementDetat(ido);
                     Services.participationcService ps = new participationcService();
-                    participationC p = new participationC(1, ido);
+                    participationC p = new participationC(Utilisateur.getIdd(), ido);
                     ps.ajouterParticipation(p);
 
                 }
@@ -157,6 +156,16 @@ public class DemandeFXMLController implements Initializable {
         AjoutFrontController frontControler = loader.getController();
         Scene scene = ajout.getScene();
         scene.setRoot(root);
+    }
+
+    @FXML
+    private void deconn(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("Authentification.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     static public class Collocation extends ListCell<offreuser> {
@@ -212,7 +221,6 @@ public class DemandeFXMLController implements Initializable {
         }
 
         setcellValue();
-        
 
     }
 
@@ -277,7 +285,5 @@ public class DemandeFXMLController implements Initializable {
         image.setImage(image1);
 
     }
-
-    
 
 }

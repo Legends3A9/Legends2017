@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="381.0" prefWidth="600.0" styleClass="backbga" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AuthentificationController">
+   <children>
+      <Label layoutX="110.0" layoutY="113.0" text="Login " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="113.0" layoutY="179.0" text="Password : " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="cnx" layoutX="274.0" layoutY="225.0" mnemonicParsing="false" onAction="#connexion" prefHeight="37.0" prefWidth="144.0" style="-fx-background-color: #0000FF;" text="Connexion " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="inscri" layoutX="141.0" layoutY="225.0" mnemonicParsing="false" onAction="#inscription" prefHeight="37.0" prefWidth="118.0" style="-fx-background-color: #0000FF;" text="Inscription " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <VBox alignment="TOP_CENTER" layoutX="479.0" layoutY="122.0" prefHeight="200.0" prefWidth="100.0" />
+      <TextField fx:id="jlogin" layoutX="214.0" layoutY="110.0" />
+      <PasswordField fx:id="jpass" layoutX="214.0" layoutY="175.0" />
+   </children>
+</AnchorPane>

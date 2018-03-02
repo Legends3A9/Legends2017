@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Entités.Utilisateur;
 import Entités.offreuser;
 import java.io.File;
 import java.io.FileInputStream;
@@ -41,6 +42,8 @@ import javafx.stage.FileChooser;
 import javafx.util.Duration;
 import org.apache.commons.io.FileUtils;
 import Services.offreuserService;
+import javafx.scene.Node;
+import javafx.stage.Stage;
 import tray.animations.AnimationType;
 import tray.notification.TrayNotification;
 
@@ -84,6 +87,8 @@ public class ListFrontController implements Initializable {
     private Button retour;
     @FXML
     private TextField etat1;
+    @FXML
+    private Button decon;
 
     @FXML
     private void retour(ActionEvent event) throws IOException {
@@ -92,6 +97,16 @@ public class ListFrontController implements Initializable {
         AjoutFrontController frontControler = loader.getController();
         Scene scene = retour.getScene();
         scene.setRoot(root);
+    }
+
+    @FXML
+    private void deconn(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("Authentification.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     static public class Collocation extends ListCell<offreuser> {
@@ -197,7 +212,7 @@ public class ListFrontController implements Initializable {
             Statement stmt = conn.createStatement();
             ResultSet rs;
 
-            rs = stmt.executeQuery("SELECT * FROM offreuser WHERE iduser=" + 1);
+            rs = stmt.executeQuery("SELECT * FROM offreuser WHERE iduser=" + Utilisateur.getIdd());
             while (rs.next()) {
                 int idE = rs.getInt("id");
                 String typeE = rs.getString("type");

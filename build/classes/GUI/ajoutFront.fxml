@@ -6,9 +6,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="606.0" prefWidth="725.0" style="-fx-background-color: #1E90FF;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjoutFrontController">
+<AnchorPane id="AnchorPane" prefHeight="606.0" prefWidth="725.0" styleClass="backbg" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjoutFrontController">
     <children>
       <Label layoutX="103.0" layoutY="96.0" text="Type" textFill="WHITE">
          <font>
@@ -41,7 +42,7 @@
       <TextField id="description" fx:id="description" layoutX="376.0" layoutY="357.0" />
       <TextField id="tel" fx:id="tel" layoutX="376.0" layoutY="413.0" />
       <TextField fx:id="etat" layoutX="377.0" layoutY="461.0" />
-      <Button fx:id="ajouter" layoutX="308.0" layoutY="531.0" mnemonicParsing="false" onAction="#ajouter" style="-fx-background-color: #32CD32;" text="Ajouter" textFill="WHITE">
+      <Button fx:id="ajouter" layoutX="191.0" layoutY="524.0" mnemonicParsing="false" onAction="#ajouter" style="-fx-background-color: #32CD32;" text="Ajouter" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
@@ -64,7 +65,7 @@
       <Label fx:id="cheminImage" layoutX="584.0" layoutY="185.0" visible="false" />
       <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="180.0" layoutX="544.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imageview" fitHeight="150.0" fitWidth="200.0" layoutX="525.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="affichage" layoutX="576.0" layoutY="48.0" mnemonicParsing="false" onAction="#affichage" style="-fx-background-color: #1100ff;" text="Afficher mes offres" textFill="WHITE">
+      <Button fx:id="affichage" layoutX="451.0" layoutY="524.0" mnemonicParsing="false" onAction="#affichage" style="-fx-background-color: #1100ff;" text="Afficher mes offres" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
@@ -74,5 +75,11 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
+      <VBox alignment="TOP_CENTER" layoutX="244.0" layoutY="217.0" prefHeight="200.0" prefWidth="100.0" />
+      <Button fx:id="decon" layoutX="634.0" layoutY="51.0" mnemonicParsing="false" onAction="#deconn" style="-fx-background-color: #ff0000;" text="Déconnexion" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

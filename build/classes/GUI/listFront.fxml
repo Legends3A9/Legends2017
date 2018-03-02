@@ -6,9 +6,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="927.0" style="-fx-background-color: #1E90FF;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ListFrontController">
+<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="1103.0" styleClass="backbg" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ListFrontController">
     <children>
       <Label layoutX="33.0" layoutY="22.0" text="Id" visible="false" />
       <Label layoutX="31.0" layoutY="78.0" text="Type" textFill="WHITE">
@@ -71,5 +72,11 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
+      <VBox alignment="TOP_CENTER" layoutX="630.0" layoutY="386.0" prefHeight="200.0" prefWidth="100.0" />
+      <Button fx:id="decon" layoutX="987.0" layoutY="26.0" mnemonicParsing="false" onAction="#deconn" style="-fx-background-color: #ff0000;" text="Déconnexion" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

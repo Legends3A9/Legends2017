@@ -8,9 +8,6 @@ package GUI;
 
 import Entités.offreuser;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,10 +22,7 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -39,13 +33,17 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import javafx.util.Duration;
-import org.apache.commons.io.FileUtils;
 import org.controlsfx.control.textfield.TextFields;
 import Services.offreuserService;
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import tray.animations.AnimationType;
 import tray.notification.TrayNotification;
 
@@ -108,6 +106,8 @@ public class ListeOffreFXMLController implements Initializable {
     private TextField etat1;
     @FXML
     private TableColumn<?, ?> etat;
+    @FXML
+    private Button decon;
 
     /**
      * Initializes the controller class.
@@ -289,6 +289,16 @@ public class ListeOffreFXMLController implements Initializable {
             sorteddata.comparatorProperty().bind(tableview.comparatorProperty());
             tableview.setItems(sorteddata);
         });
+    }
+
+    @FXML
+    private void deconn(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("Authentification.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 

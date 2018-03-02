@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import DataBase.DB;
+import Entités.Utilisateur;
 
 /**
  *
@@ -36,7 +37,7 @@ public class offreuserService {
             ste.setInt(6, o.getTel());
             ste.setString(7, o.getImage());
             ste.setString(8, o.getEtat());
-            ste.setInt(9,1);
+            ste.setInt(9, Utilisateur.getIdd());
             ste.executeUpdate();
 
         } catch (SQLException ex) {
@@ -64,7 +65,7 @@ public class offreuserService {
     public static List<offreuser> selectoffre() {
         List<offreuser> list = new ArrayList<>();
         String req;
-        req = "SELECT *  FROM offreuser WHERE iduser="+1;
+        req = "SELECT *  FROM offreuser WHERE iduser="+ Utilisateur.getIdd();
         try {
             PreparedStatement ste = ds.getConnection().prepareStatement(req);
             ResultSet result = ste.executeQuery();

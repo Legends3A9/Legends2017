@@ -20,7 +20,7 @@ public class FXMain extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("demandeFXML.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Authentification.fxml"));
 
         try {
             Parent root = loader.load();

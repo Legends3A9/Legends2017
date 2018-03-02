@@ -12,23 +12,23 @@
 <AnchorPane id="AnchorPane" prefHeight="741.0" prefWidth="1123.0" style="-fx-background-color: #1E90FF;" styleClass="backbg" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DemandeFXMLController">
    <children>
       <ListView fx:id="list" layoutX="7.0" layoutY="78.0" prefHeight="618.0" prefWidth="471.0" />
-      <Label fx:id="prix1" layoutX="846.0" layoutY="76.0">
+      <Label fx:id="prix1" layoutX="846.0" layoutY="76.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="type1" layoutX="846.0" layoutY="116.0">
+      <Label fx:id="type1" layoutX="846.0" layoutY="116.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="adresse1" layoutX="846.0" layoutY="160.0">
+      <Label fx:id="adresse1" layoutX="846.0" layoutY="160.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="nb_place_dispo1" layoutX="846.0" layoutY="204.0" prefHeight="17.0" prefWidth="0.0">
+      <Label fx:id="nb_place_dispo1" layoutX="846.0" layoutY="204.0" prefHeight="17.0" prefWidth="0.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="description1" layoutX="846.0" layoutY="247.0" textFill="#0a0a0a">
+      <Label fx:id="description1" layoutX="846.0" layoutY="247.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
@@ -64,12 +64,12 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Label layoutX="898.0" layoutY="76.0" text="Pуб">
+      <Label layoutX="898.0" layoutY="76.0" text="Pуб" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
       <ImageView fx:id="image" fitHeight="293.0" fitWidth="358.0" layoutX="609.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="cheminImage" layoutX="937.0" layoutY="667.0" textFill="RED" visible="false">
+      <Label fx:id="cheminImage" layoutX="937.0" layoutY="667.0" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
@@ -78,17 +78,17 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="etat1" layoutX="845.0" layoutY="325.0">
+      <Label fx:id="etat1" layoutX="845.0" layoutY="325.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="id1" layoutX="541.0" layoutY="559.0" visible="false">
+      <Label fx:id="id1" layoutX="541.0" layoutY="559.0" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="tel1" layoutX="846.0" layoutY="285.0">
+      <Label fx:id="tel1" layoutX="846.0" layoutY="285.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -99,16 +99,21 @@
          </font>
       </Label>
       <Separator layoutX="51.0" layoutY="61.0" prefHeight="2.0" prefWidth="350.0" />
-      <Label fx:id="dinar" layoutX="982.0" layoutY="76.0">
+      <Label fx:id="dinar" layoutX="982.0" layoutY="76.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="1040.0" layoutY="76.0" text="TND">
+      <Label layoutX="1040.0" layoutY="76.0" text="TND" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
       <VBox alignment="TOP_CENTER" layoutX="462.0" layoutY="104.0" prefHeight="200.0" prefWidth="100.0" />
+      <Button fx:id="decon" layoutX="1008.0" layoutY="31.0" mnemonicParsing="false" onAction="#deconn" style="-fx-background-color: #ff0000;" text="Déconnexion" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
