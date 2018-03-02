@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="GUI.PDFticketFXMLController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="401.0" prefWidth="595.0">
+         <children>
+            <AnchorPane id="AnchorPane" layoutY="-4.0" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0000ff;">
+                     <children>
+                        <ImageView fx:id="imgLoading" fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ANIMATIONLOG/img/294.GIF" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="lblWelcome" fill="WHITE" layoutX="43.0" layoutY="103.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome On Russia 2018" wrappingWidth="289.2421875">
+                           <font>
+                              <Font name="Segoe UI" size="48.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="lblRudy" fill="WHITE" layoutX="132.0" layoutY="123.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="developer par LEAGENDS">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Text>
+                        <VBox fx:id="vboxBottom" layoutX="-2.0" layoutY="310.0" opacity="0.0" spacing="3.0">
+                           <children>
+                              <Text fill="WHITE" layoutX="14.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copyrigth By Herudi Sahimar">
+                                 <font>
+                                    <Font name="Segoe UI" size="12.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" layoutX="15.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From Majalengka Of University - West Java - Indonesia">
+                                 <font>
+                                    <Font name="Segoe UI" size="12.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

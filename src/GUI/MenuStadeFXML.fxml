@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane styleClass="backbgb" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MenuStadeFXMLController">
+   <children>
+      <AnchorPane layoutY="1.0" prefHeight="421.0" prefWidth="808.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane id="AnchorPane" prefHeight="421.0" prefWidth="808.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="stade" layoutY="8.0" mnemonicParsing="false" onAction="#ActionStade" text="ajouter Stade" visible="false" />
+                  <Button fx:id="ticket" layoutX="514.0" layoutY="8.0" mnemonicParsing="false" onAction="#ActionTicket" text="ajouter ticket" visible="false" />
+                  <Button fx:id="gererstade" layoutX="6.0" layoutY="33.0" mnemonicParsing="false" onAction="#ActionGererStade" text="gerer stade" visible="false" />
+                  <Button fx:id="gererticket" layoutX="519.0" layoutY="33.0" mnemonicParsing="false" onAction="#ActionGererTicket" text="gerer ticket" visible="false" />
+                  <ImageView fx:id="stadea" fitHeight="82.0" fitWidth="102.0" layoutX="100.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="ticketa" fitHeight="76.0" fitWidth="105.0" layoutX="342.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="stadet" fitHeight="89.0" fitWidth="105.0" layoutX="111.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="tickett" fitHeight="89.0" fitWidth="115.0" layoutX="337.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="plus" fitHeight="25.0" fitWidth="27.0" layoutX="167.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="plusa" fitHeight="25.0" fitWidth="27.0" layoutX="413.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="ges" fitHeight="33.0" fitWidth="34.0" layoutX="177.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="gesa" fitHeight="33.0" fitWidth="34.0" layoutX="410.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="106.0" layoutY="151.0" text="Ajouter Stade" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="337.0" layoutY="149.0" text="AjouterTicket" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="118.0" layoutY="289.0" text="Gestion Stade" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="346.0" layoutY="289.0" text="GestionTicket" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="529.0" layoutY="102.0" prefHeight="200.0" prefWidth="100.0" />
+                  <Button fx:id="deco" layoutX="603.0" layoutY="33.0" mnemonicParsing="false" onAction="#decoAction" style="-fx-background-color: #930404;" text="déconnection" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
