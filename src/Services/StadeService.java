@@ -19,7 +19,7 @@ import java.util.List;
 public class StadeService {
     static DB ds =DB.getInstance(); 
     public  List<Stade> getAll() {
-        String req = "select nom from stade";
+        String req = "select nom_stade from stade";
 
         List<Stade> stades = new ArrayList<>();
 

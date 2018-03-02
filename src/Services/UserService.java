@@ -82,6 +82,7 @@ public class UserService {
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
                 Utilisateur user = new Utilisateur(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4));
+                
                 users.add(user);
             }
         } catch (Exception e) {

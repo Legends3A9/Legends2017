@@ -1,0 +1,59 @@
+.backbg
+{
+    -fx-background-image:url("/image/blue.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.backbga
+{
+    -fx-background-image:url("/image/a.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.table-view{
+    -fx-base: #ff0000;
+    -fx-control-inner-background: #e6f7ff;
+    -fx-background-color:transparent;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 1;
+    -fx-selection-bar-non-focused:  #2A2A2A;   
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 25;
+    -fx-border-width: 0 0 0 0;
+    -fx-text-fill: #000000;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 13px;
+    -fx-font-weight:bold;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: #ffffff;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-cell {
+    -fx-font-size: 14px;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: #000000;
+    -fx-alignment: center-left;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color:  #ff0000;
+}
+
+.backbgb
+{
+    -fx-background-image:url("/image/rouge.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.backbgbe
+{
+    -fx-background-image:url("/image/beige.jpg");
+    -fx-background-size: 100% 100%;
+}

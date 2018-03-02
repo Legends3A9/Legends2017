@@ -7,7 +7,9 @@ package GUI;
 
 import Entités.Utilisateur;
 import Services.UserService;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.security.Provider;
@@ -20,6 +22,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -31,18 +35,24 @@ public class AuthentificationController implements Initializable {
 
     @FXML
     private JFXTextField jlogin;
-    @FXML
-    private JFXTextField jpass;
+   
     @FXML
     private Button cnx;
     @FXML
-    private Button inscri;
+    private JFXPasswordField jpass;
+    @FXML
+    private ImageView logo;
+    
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        File file = new File("C:\\Users\\ali hamouda\\Documents\\NetBeansProjects\\pi_crud\\src\\image\\a.png");
+
+                Image image = new Image(file.toURI().toString());
+                logo.setImage(image);
       
     }    
 
@@ -58,9 +68,9 @@ public class AuthentificationController implements Initializable {
 
                 
         
-            if(user.getRole().toLowerCase().equals("dsc"))
+            if(user.getRole().toLowerCase().equals("admin"))
             {   
-               Parent root = FXMLLoader.load(getClass().getResource("table.fxml"));
+               Parent root = FXMLLoader.load(getClass().getResource("backMatch.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
@@ -68,11 +78,11 @@ public class AuthentificationController implements Initializable {
             }
             else if(user.getRole().toLowerCase().equals("membre")){
                
-                Parent root = FXMLLoader.load(getClass().getResource("FxmlFrontMatch.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("FXMLFrontMatch.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-            System.out.println("erreeeur");
+            
         } 
         } 
         Utilisateur.setEtat_compte(1);
@@ -86,11 +96,11 @@ public class AuthentificationController implements Initializable {
         System.out.println(user.getIdd());
     }
 
-    @FXML
     private void inscription(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+       ((Node)(event.getSource())).getScene().getWindow().hide();
         Parent root = FXMLLoader.load(getClass().getResource("InscriptionUser.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
     }

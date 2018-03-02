@@ -9,10 +9,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="a" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Ajout_MatchController">
+<AnchorPane id="AnchorPane" fx:id="a" prefHeight="400.0" prefWidth="600.0" styleClass="backbgb" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Ajout_MatchController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="606.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="400.0" fitWidth="606.0" layoutX="-600.0" layoutY="-373.0" pickOnBounds="true" preserveRatio="true">
          <effect>
             <ImageInput>
                <source>
@@ -23,20 +25,59 @@
       </ImageView>
       <AnchorPane fx:id="poule" layoutX="-3.0" layoutY="109.0" prefHeight="277.0" prefWidth="606.0">
          <children>
-            <Label layoutX="74.0" layoutY="67.0" text="Equipe1" />
-            <Label layoutX="326.0" layoutY="67.0" text="Equipe2" />
-            <Label layoutX="74.0" layoutY="130.0" text="Date" />
-            <Label layoutX="177.0" layoutY="194.0" text="Stade" />
-            <Label layoutX="332.0" layoutY="130.0" text="heure" />
-            <JFXTimePicker fx:id="heure" layoutX="375.0" layoutY="126.0" />
-            <JFXDatePicker fx:id="date" layoutX="132.0" layoutY="126.0" />
-            <JFXComboBox fx:id="poule1" layoutX="226.0" layoutY="14.0" prefHeight="25.0" prefWidth="154.0" />
-            <JFXComboBox fx:id="equipe1" layoutX="130.0" layoutY="63.0" prefHeight="25.0" prefWidth="154.0" />
-            <JFXComboBox fx:id="equipe2" layoutX="375.0" layoutY="63.0" prefHeight="25.0" prefWidth="154.0" />
-            <JFXComboBox fx:id="stade" layoutX="238.0" layoutY="190.0" prefHeight="25.0" prefWidth="154.0" />
-            <JFXButton fx:id="Ajout_match" layoutX="502.0" layoutY="215.0" onAction="#Ajout_match" text="Ajouter" />
+            <Label layoutX="74.0" layoutY="67.0" text="Equipe1" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="315.0" layoutY="67.0" text="Equipe2" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="74.0" layoutY="130.0" text="Date" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="177.0" layoutY="194.0" text="Stade" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="323.0" layoutY="129.0" text="heure" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <JFXTimePicker fx:id="heure" defaultColor="RED" layoutX="375.0" layoutY="126.0" style="-fx-background-color: #ffffff;" />
+            <JFXDatePicker fx:id="date" defaultColor="#ff0505" layoutX="132.0" layoutY="126.0" style="-fx-background-color: #ffffff;" />
+            <JFXComboBox fx:id="poule1" layoutX="226.0" layoutY="14.0" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #ffffff;" />
+            <JFXComboBox fx:id="equipe1" layoutX="130.0" layoutY="63.0" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #ffffff;" />
+            <JFXComboBox fx:id="equipe2" layoutX="375.0" layoutY="63.0" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #ffffff;" />
+            <JFXComboBox fx:id="stade" layoutX="238.0" layoutY="190.0" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #ffffff;" />
+            <JFXButton fx:id="Ajout_match" layoutX="511.0" layoutY="233.0" onAction="#Ajout_match" style="-fx-background-color: red;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></JFXButton>
+            <Label layoutX="177.0" layoutY="18.0" text="Match" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <VBox layoutX="14.0" layoutY="9.0" prefHeight="60.0" prefWidth="65.0" />
          </children>
       </AnchorPane>
-      <JFXComboBox fx:id="type_phase" layoutX="223.0" layoutY="49.0" prefHeight="25.0" prefWidth="154.0" />
+      <JFXComboBox fx:id="type_phase" layoutX="223.0" layoutY="49.0" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #ffffff;" />
+      <JFXButton layoutX="14.0" layoutY="14.0" onAction="#retourAction" style="-fx-background-color: red;" text="Retour" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="482.0" layoutY="14.0" onAction="#decoAction" style="-fx-background-color: red;" text="Deconnexion" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="174.0" layoutY="53.0" text="Phase" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

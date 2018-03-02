@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="381.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="GUI.AuthentificationController">
+<AnchorPane id="AnchorPane" prefHeight="305.0" prefWidth="551.0" styleClass="backbga" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AuthentificationController">
    <children>
-      <JFXTextField fx:id="jlogin" layoutX="207.0" layoutY="94.0" />
-      <Label layoutX="110.0" layoutY="113.0" text="Login " />
-      <Label layoutX="113.0" layoutY="179.0" text="Password : " />
-      <JFXTextField fx:id="jpass" layoutX="207.0" layoutY="161.0" />
-      <Button fx:id="cnx" layoutX="274.0" layoutY="225.0" mnemonicParsing="false" onAction="#connexion" prefHeight="37.0" prefWidth="144.0" text="Connexion " />
-      <Button fx:id="inscri" layoutX="141.0" layoutY="225.0" mnemonicParsing="false" onAction="#inscription" prefHeight="37.0" prefWidth="118.0" text="Inscription " />
+      <JFXTextField fx:id="jlogin" layoutX="385.0" layoutY="63.0" />
+      <JFXPasswordField fx:id="jpass" layoutX="385.0" layoutY="128.0" />
+      <Label layoutX="304.0" layoutY="80.0" text="Login " />
+      <Label layoutX="304.0" layoutY="144.0" text="Password : " />
+      <Button fx:id="cnx" layoutX="357.0" layoutY="197.0" mnemonicParsing="false" onAction="#connexion" prefHeight="37.0" prefWidth="111.0" style="-fx-background-color: #ffff80;" text="Connexion ">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Separator layoutX="241.0" layoutY="61.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="13.0" />
+      <VBox layoutX="37.0" layoutY="261.0" prefHeight="17.0" prefWidth="21.0" />
+      <ImageView fx:id="logo" fitHeight="193.0" fitWidth="151.0" layoutX="42.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

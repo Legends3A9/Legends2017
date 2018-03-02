@@ -42,7 +42,12 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Optional;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ButtonType;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -392,5 +397,25 @@ public class Ajout_MatchController implements Initializable {
          
     
 }
+
+    @FXML
+    private void retourAction(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+       ((Node)(event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("backMatch.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void decoAction(ActionEvent event)  throws IOException {
+          Stage stage = new Stage();
+       ((Node)(event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("Authentification.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
 

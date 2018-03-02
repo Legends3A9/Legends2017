@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Entités.Equipe;
 import Entités.Pronostic;
 import Entités.Utilisateur;
 import Entités.Match;
@@ -31,10 +32,15 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.HPos;
 import javafx.geometry.Pos;
+import javafx.geometry.VPos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -44,7 +50,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -112,7 +123,6 @@ public class FXMLFrontMatchController implements Initializable {
     @FXML
     private Button colocation;
 
-     @FXML
     private void deco(ActionEvent event) throws IOException {
         Stage stage = (Stage) deco.getScene().getWindow();
         stage.close();
@@ -221,74 +231,110 @@ public class FXMLFrontMatchController implements Initializable {
     
     }
 
+    @FXML
+    private void decoAction(ActionEvent event)  throws IOException {
+        Stage stage = new Stage();
+       ((Node)(event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("Authentification.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        
+        
+    }
+
    
 
     /**
      * Initializes the controller class.
      */
-    static public class Matchs extends ListCell<Match> { 
-  
-   
-  
-    public Matchs(){ 
-        
-    } 
-  
-  
-    @Override
-    protected void updateItem(Match item, boolean bln) { 
-         super.updateItem(item, bln);
-                       
-                           
-                        if (item != null) { 
-                            
-            File file = new File("C:\\xampp\\htdocs\\image\\"+item.getEquipe1().toLowerCase()+".jpg");
-        Image image = new Image(file.toURI().toString());
-        ImageView img = new ImageView(image); 
-        img.setFitHeight(50);
-        img.setFitWidth(90);
-         File file2 = new File("C:\\xampp\\htdocs\\image\\"+item.getEquipe2().toLowerCase()+".jpg");
-        Image image2 = new Image(file2.toURI().toString());
-        ImageView img2 = new ImageView(image2); 
-        img2.setFitHeight(50);
-        img2.setFitWidth(90);
-        /*VBox vBox = new VBox(new Text(item.getStade()),new Text(item.getDate_match().toString()),new Text(item.getHeure().toString()));*/
-                            HBox nomEquipe1 = new HBox(new Text(item.getEquipe1()));
-                            
-                            HBox nomEquipe2 = new HBox(new Text(item.getEquipe2()));
-                            
-                            VBox equipe1 = new VBox(nomEquipe1,img);
-                            
-                            VBox equipe2 = new VBox(nomEquipe2,img2);
-                            VBox vs = new VBox(new Text(" "),new Text("VS"),new Text(" "));
-                            
-                            vs.setAlignment(Pos.CENTER);
-                            HBox hBox = new HBox(equipe1,vs,equipe2);
-                             nomEquipe1.setAlignment(Pos.CENTER);
-                             nomEquipe2.setAlignment(Pos.CENTER);
-                           
-                            Text t =new Text(item.getStade());
-                            Text t2 =new Text(item.getDate_match().toString());
-                            Text t3 =new Text(item.getHeure().toString());
-                            Text t4 = new Text(item.getEquipe2());
-                            t.setStyle("-fx-font-size: 18 arial;");
-                            t2.setStyle("-fx-font-size: 25 arial;");
-                            t3.setStyle("-fx-font-size: 20 arial;");
-                            
-                            hBox.setSpacing(15);
-                            vs.setSpacing(10);
-                            nomEquipe1.setSpacing(10);
-                            nomEquipe2.setSpacing(10);
-                            
-                            setGraphic(hBox);
-    } 
-}   }
+    public class Poules extends ListCell<Match> {
+
+        private final GridPane gridPane = new GridPane();
+        private final ImageView continent = new ImageView();
+        private final Label continents = new Label();
+        private final Label equipe = new Label();
+        private final ImageView cup = new ImageView();
+        private final Label descriptionLabel = new Label();
+        private final ImageView flag = new ImageView();
+        private final AnchorPane content = new AnchorPane();
+       
+
+        public Poules() {
+            flag.setFitWidth(75);
+            flag.setPreserveRatio(true);
+            GridPane.setConstraints(flag, 0, 0, 1, 3);
+            GridPane.setValignment(flag, VPos.TOP);
+            equipe.setStyle("-fx-font-weight: bold; -fx-font-size: 1.0em;");
+            GridPane.setConstraints(equipe, 1, 0);
+            continents.setStyle("-fx-font-weight: bold; -fx-font-size: 1.0em;");
+            GridPane.setConstraints(continents, 2, 0);
+            continent.setFitWidth(75);
+            continent.setPreserveRatio(true);
+            GridPane.setConstraints(continent, 4,0,1, 3);
+            GridPane.setValignment(continent, VPos.CENTER);
+            descriptionLabel.setStyle("-fx-opacity: 0.75;");
+            GridPane.setConstraints(descriptionLabel, 1, 1);
+            GridPane.setColumnSpan(descriptionLabel, Integer.MAX_VALUE);
+
+            gridPane.getColumnConstraints().add(new ColumnConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.NEVER, HPos.LEFT, true));
+            gridPane.getColumnConstraints().add(new ColumnConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.ALWAYS, HPos.LEFT, true));
+            gridPane.getColumnConstraints().add(new ColumnConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.NEVER, HPos.LEFT, true));
+            gridPane.getColumnConstraints().add(new ColumnConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.NEVER, HPos.LEFT, true));
+            gridPane.getRowConstraints().add(new RowConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.NEVER, VPos.CENTER, true));
+            gridPane.getRowConstraints().add(new RowConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.NEVER, VPos.CENTER, true));
+            gridPane.getRowConstraints().add(new RowConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.ALWAYS, VPos.CENTER, true));
+            gridPane.setHgap(6);
+            gridPane.setVgap(6);
+            gridPane.getChildren().setAll(flag, equipe, continents, continent, descriptionLabel);
+            AnchorPane.setTopAnchor(gridPane, 0d);
+            AnchorPane.setLeftAnchor(gridPane, 0d);
+            AnchorPane.setBottomAnchor(gridPane, 0d);
+            AnchorPane.setRightAnchor(gridPane, 0d);
+
+            content.getChildren().add(gridPane);
+        }
+
+        @Override
+        protected void updateItem(Match item, boolean empty) {
+            super.updateItem(item, empty);
+            setGraphic(null);
+            setText(null);
+            setContentDisplay(ContentDisplay.LEFT);
+
+            if (!empty && item != null) {
+                continents.setText(item.getEquipe1());
+                equipe.setText(item.getEquipe2());
+                File file = new File("C:\\xampp\\htdocs\\image\\" + item.getEquipe1().toLowerCase() + ".jpg");
+
+                Image image = new Image(file.toURI().toString());
+                File file2 = new File("C:\\xampp\\htdocs\\image\\" + item.getEquipe2().toLowerCase() + ".jpg");
+
+                Image image2 = new Image(file2.toURI().toString());
+                continent.setImage(image2);
+                flag.setImage(image);
+                
+             
+                setText(null);
+                setGraphic(content);
+                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+            }
+        }
+    }
+
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
          data = FXCollections.observableArrayList();
          id.setVisible(false);
+         File file = new File("C:\\xampp\\htdocs\\image\\Vainqueur D1.jpg");
+                    Image image = new Image(file.toURI().toString());
+                    equipe11.setImage(image);
+                    equipe22.setImage(image);
+                    
+                    
         // data1 = FXCollections.observableArrayList();
          phase.getItems().addAll("poule","final");
         phase.valueProperty().addListener(new ChangeListener<String>() {
@@ -314,7 +360,7 @@ public class FXMLFrontMatchController implements Initializable {
                             data = FXCollections.observableArrayList();
                             loadDataFromDatabase(t1);
                             setcellValue();
-                            list.setCellFactory(lv -> new Matchs());
+                            list.setCellFactory(lv -> new Poules());
                            
 
             } catch (SQLException ex) {

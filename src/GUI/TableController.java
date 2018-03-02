@@ -16,6 +16,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
 import java.io.File;
+import java.io.IOException;
 import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.sql.Connection;
@@ -43,7 +44,11 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -56,6 +61,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -453,7 +459,7 @@ public class TableController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
              alert.setTitle("Modification");
              alert.setHeaderText(null);
-             alert.setContentText("Vous Voulez SUPPRIMER le match?:");
+             alert.setContentText("Vous Voulez MODIFIER le match?:");
              Optional<ButtonType> result = alert.showAndWait();
              if (result.get() == ButtonType.OK){
                 sm.updateMatch(m);
@@ -472,8 +478,28 @@ public class TableController implements Initializable {
         l= es.getAll();
         System.out.println(l);
         
-        en.EnvoyerMail(l,equipe11.getText(),equipe21.getText(), stade1.getValue().toString(),date1.getValue().toString() , heure1.getValue().toString());
+        en.EnvoyerMail(l,equipe11.getText(),equipe21.getText(), stade1.getValue(),date1.getValue().toString() , heure1.getValue().toString());
                 
+    }
+
+    @FXML
+    private void decoAction(ActionEvent event) throws IOException {
+         Stage stage = new Stage();
+       ((Node)(event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("Authentification.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void retourAction(ActionEvent event)throws IOException {
+         Stage stage = new Stage();
+       ((Node)(event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("backMatch.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
       
 }
